@@ -85,7 +85,7 @@
                         <ColumnDefinition Width="270*"/>
                         <ColumnDefinition Width="392*"/>
                     </Grid.ColumnDefinitions>
-                    <ListView  Margin="5" Grid.Column="0" Name="listeAbonnes" SelectionChanged="AfficherFilm" Grid.ColumnSpan="3">
+                    <ListView  Margin="5" Grid.Column="0" Name="listeAbonnes" SelectionChanged="AfficherAbonne" Grid.ColumnSpan="3">
                         <ListView.View>
                             <GridView>
                                 <GridView.Columns>
