@@ -8,13 +8,19 @@
 		<filmo:Filmographie>
 			<filmo:Filmographie.Artistes>
 				<filmo:Acteur x:Name="jstewart" Nom="Stewart" Prenom="James" />
+				<filmo:Acteur x:Name="bpitt" Nom="Pitt" Prenom="Brad" />
+				<filmo:Acteur x:Name="ajolie" Nom="Jolie" Prenom="Angelina" />
+				<filmo:Acteur x:Name="tcruise" Nom="Cruise" Prenom="Tom" />
+				<filmo:Acteur x:Name="thanks" Nom="Hanks" Prenom="Tom" />
 				<filmo:Acteur x:Name="knovack" Nom="Novack" Prenom="Kim" />
 				<filmo:Acteur x:Name="lremick">
 					<filmo:Acteur.Nom>Remick</filmo:Acteur.Nom>
 						<filmo:Acteur.Prenom>Lee</filmo:Acteur.Prenom>
 				</filmo:Acteur>
+				
 				<filmo:MetteurEnScene x:Name="ahitchcock" Nom="Hitchcock" Prenom="Alfred" />
 				<filmo:MetteurEnScene x:Name="opreminger" Nom="Preminger" Prenom="Otto" />
+			
 			</filmo:Filmographie.Artistes>
 			<filmo:Filmographie.Films>
 				<filmo:Film x:Name="Murder" Annee="1959" Genre="Policier" Pays="US" Titre="Anatomy of a Murder">
@@ -58,6 +64,56 @@
 	
 	<vod:VOD.Abonnes>
 		<vod:Abonne x:Name="lagetgre" Nom="Laget" Prenom="Gregoire">
+			<vod:Abonne.Souscriptions>
+				<vod:Souscription Date="06.12.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Premium</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+
+				<vod:Souscription Date="02.12.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Standard</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+			</vod:Abonne.Souscriptions>
+		</vod:Abonne>
+		
+		
+		<vod:Abonne x:Name="rabineaulau" Nom="Rabineau" Prenom="Laurene">
+			<vod:Abonne.Souscriptions>
+				<vod:Souscription Date="06.12.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Premium</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+
+				<vod:Souscription Date="02.12.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Standard</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+			</vod:Abonne.Souscriptions>
+		</vod:Abonne>
+		
+		<vod:Abonne x:Name="rabineauton" Nom="Rabineau" Prenom="Tony">
+			<vod:Abonne.Souscriptions>
+				<vod:Souscription Date="06.12.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Premium</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+
+				<vod:Souscription Date="02.12.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Standard</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+			</vod:Abonne.Souscriptions>
+		</vod:Abonne>
+		
+		
+		<vod:Abonne x:Name="rabineaulis" Nom="Rabineau" Prenom="Lisa">
 			<vod:Abonne.Souscriptions>
 				<vod:Souscription Date="06.12.2020">
 					<vod:Souscription.Offre>
