@@ -1,0 +1,84 @@
+<VOD xmlns="clr-namespace:AppVOD.Modele.VOD;assembly=AppVOD" xmlns:amf="clr-namespace:AppVOD.Modele.Filmo;assembly=AppVOD" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <VOD.Abonnes>
+    <Abonne Nom="Laget" Prenom="Gregoire">
+      <Abonne.Souscriptions>
+        <Souscription Date="2020-06-12">
+          <Souscription.Offre>
+            <Offre x:Name="__ReferenceID3" Cout="30">
+              <Offre.Films>
+                <amf:Film x:Name="__ReferenceID4" Annee="1959" Genre="Policier" Pays="US" Titre="Anatomy of a Murder">
+                  <amf:Film.MetteurEnScene>
+                    <amf:MetteurEnScene x:Name="__ReferenceID8" Nom="Preminger" Prenom="Otto" />
+                  </amf:Film.MetteurEnScene>
+                  <amf:Film.Roles>
+                    <amf:Role Personnage="Paul Biegler">
+                      <amf:Role.Acteur>
+                        <amf:Acteur x:Name="__ReferenceID0" Nom="Stewart" Prenom="James" />
+                      </amf:Role.Acteur>
+                    </amf:Role>
+                    <amf:Role Personnage="Laura Manion">
+                      <amf:Role.Acteur>
+                        <amf:Acteur x:Name="__ReferenceID6" Nom="Remick" Prenom="Lee" />
+                      </amf:Role.Acteur>
+                    </amf:Role>
+                  </amf:Film.Roles>
+                </amf:Film>
+                <amf:Film x:Name="__ReferenceID1" Annee="1958" Genre="Policier" Pays="US" Titre="Vertigo">
+                  <amf:Film.MetteurEnScene>
+                    <amf:MetteurEnScene x:Name="__ReferenceID7" Nom="Hitchcock" Prenom="Alfred" />
+                  </amf:Film.MetteurEnScene>
+                  <amf:Film.Roles>
+                    <amf:Role Acteur="{x:Reference __ReferenceID0}" Personnage="John Ferguson" />
+                    <amf:Role Personnage="Madeleine Elster">
+                      <amf:Role.Acteur>
+                        <amf:Acteur x:Name="__ReferenceID5" Nom="Novack" Prenom="Kim" />
+                      </amf:Role.Acteur>
+                    </amf:Role>
+                  </amf:Film.Roles>
+                </amf:Film>
+              </Offre.Films>
+            </Offre>
+          </Souscription.Offre>
+        </Souscription>
+        <Souscription Date="2020-02-12">
+          <Souscription.Offre>
+            <Offre x:Name="__ReferenceID2" Cout="10">
+              <Offre.Films>
+                <x:Reference>__ReferenceID1</x:Reference>
+              </Offre.Films>
+            </Offre>
+          </Souscription.Offre>
+        </Souscription>
+      </Abonne.Souscriptions>
+    </Abonne>
+    <Abonne Nom="Laget" Prenom="Clement">
+      <Abonne.Souscriptions>
+        <Souscription Offre="{x:Reference __ReferenceID2}" Date="2020-02-11" />
+      </Abonne.Souscriptions>
+    </Abonne>
+    <Abonne Nom="Laget" Prenom="Camille">
+      <Abonne.Souscriptions>
+        <Souscription Offre="{x:Reference __ReferenceID2}" Date="2020-07-11" />
+      </Abonne.Souscriptions>
+    </Abonne>
+  </VOD.Abonnes>
+  <VOD.Filmographie>
+    <amf:Filmographie>
+      <amf:Filmographie.Artistes>
+        <x:Reference>__ReferenceID0</x:Reference>
+        <x:Reference>__ReferenceID5</x:Reference>
+        <x:Reference>__ReferenceID6</x:Reference>
+        <x:Reference>__ReferenceID7</x:Reference>
+        <x:Reference>__ReferenceID8</x:Reference>
+      </amf:Filmographie.Artistes>
+      <amf:Filmographie.Films>
+        <x:Reference>__ReferenceID4</x:Reference>
+        <x:Reference>__ReferenceID1</x:Reference>
+      </amf:Filmographie.Films>
+    </amf:Filmographie>
+  </VOD.Filmographie>
+  <VOD.Offres>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+  </VOD.Offres>
+</VOD>

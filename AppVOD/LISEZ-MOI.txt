@@ -1,0 +1,22 @@
+﻿
+Ce projet contient différents fichiers qui implémentent le modèle UML (diagramme de classes) de la filmographie :
+	
+	- L'espace de noms AppVOD.Modele.Filmo (répertoire IHM/Filmo du projet AppVOD) contient les classes d'implémentation
+	  du modèle (également utilisé dans le cours C#)
+
+	- L'espace de noms AppVOD.IHM.Filmo (répertoire IHM/Filmo du projet AppVOD) contient :
+		* Les fichiers CommandesFilmo.cs et ListeGenre/Pays.cs, FenetreRole.xaml/.xaml.cs et FenetreFilmo.xaml/.xaml.cs
+		  définissent la partie de l'IHM gérant la filmographie ;
+		* Les espaces de noms Texte, Enumeration, Liste, Table et Selection contiennent les extraits du fichier FenetreRole.xaml
+		  utilisées en cours pour introduire les différents concepts liés à la liaison de données.
+
+
+Le modèle UML relatif à la VOD devra être implémenté par vos soins :
+
+	- L'espace de noms AppVOD.Modele.VOD (répertoire Modele/VOD du projet AppVOD) contiendra les classes d'implémentation
+	  du modèle VOD ;
+
+	- L'espace de noms AppVOD.IHM.VOD (répertoire IHM/VOD du projet AppVOD) contiendra les fichiers XAML et C# ("code-behind")
+	  définissant la partie de l'IHM gérant la VOD. Il devra contenir le fichier FenetreVOD.xaml/.xaml.cs lequel sera construit
+	  à partir du fichier FenetreFilmo.xaml/.xaml.cs (faire un copier-coller). 
+	  Le fichier App.xaml devra être modifié pour préciser le lien vers ce fichier.

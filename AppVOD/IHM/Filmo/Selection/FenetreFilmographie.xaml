@@ -1,0 +1,54 @@
+﻿<Window x:Class="AppVOD.IHM.Filmo.Selection.FenetreFilmographie"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:filmo="clr-namespace:AppVOD.IHM.Filmo"
+    xmlns:text="clr-namespace:AppVOD.IHM.Filmo.Texte"
+    Title="Filmo" Height="600" Width="800">
+    <Window.Resources>
+        <filmo:ListeGenres x:Key="Genres"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListView  Margin="5" Grid.Column="0" Name="listeFilms">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Titre" DisplayMemberBinding="{Binding Path=Titre}" />
+                        <GridViewColumn Header="Année" DisplayMemberBinding="{Binding Path=Annee}"/>                       
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid  Grid.Column="1" DataContext="{Binding ElementName=listeFilms, Path=SelectedItem}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Margin="5"  Grid.Row="0" Grid.Column="0">Titre</Label>
+            <TextBox Margin="5" Grid.Row="0" Grid.Column="1" Text="{Binding Path=Titre}"/>
+            <Label Margin="5" Grid.Row="1" Grid.Column="0">Année</Label>
+            <TextBox Margin="5" Grid.Row="1" Grid.Column="1">
+                <TextBox.Text>
+                    <Binding Path="Annee">
+                       
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+            <Label Margin="5" Grid.Row="2" Grid.Column="0">Genre</Label>
+            <ComboBox Margin="5" Grid.Row="2" Grid.Column="1" ItemsSource="{Binding Source={StaticResource Genres}}" Text="{Binding Path=Genre}"/>            
+        </Grid>
+    </Grid>
+
+</Window>

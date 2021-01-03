@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AppVOD</name>
+    </assembly>
+    <members>
+        <member name="T:AppVOD.App">
+            <summary>
+            Logique d'interaction pour App.xaml
+            </summary>
+            <summary>
+            App
+            </summary>
+        </member>
+        <member name="M:AppVOD.App.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="M:AppVOD.App.Main">
+            <summary>
+            Application Entry Point.
+            </summary>
+        </member>
+        <member name="T:AppVOD.FenetreApp">
+            <summary>
+            Logique d'interaction pour FenetreApp.xaml
+            </summary>
+            <summary>
+            FenetreApp
+            </summary>
+        </member>
+        <member name="M:AppVOD.FenetreApp.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AppVOD.IHM.Filmo.Enumeration.VueFilm">
+            <summary>
+            VueFilm
+            </summary>
+        </member>
+        <member name="M:AppVOD.IHM.Filmo.Enumeration.VueFilm.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AppVOD.IHM.Filmo.FenetreFilmo">
+            <summary>
+            FenetreFilmo
+            </summary>
+        </member>
+        <member name="M:AppVOD.IHM.Filmo.FenetreFilmo.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AppVOD.IHM.Filmo.FenetreRole">
+            <summary>
+            FenetreRole
+            </summary>
+        </member>
+        <member name="M:AppVOD.IHM.Filmo.FenetreRole.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AppVOD.IHM.Filmo.Liste.VueFilms">
+            <summary>
+            VueFilms
+            </summary>
+        </member>
+        <member name="M:AppVOD.IHM.Filmo.Liste.VueFilms.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AppVOD.IHM.Filmo.Selection.FenetreFilmographie">
+            <summary>
+            FenetreFilmographie
+            </summary>
+        </member>
+        <member name="M:AppVOD.IHM.Filmo.Selection.FenetreFilmographie.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AppVOD.IHM.Filmo.Selection.VueFilm">
+            <summary>
+            VueFilm
+            </summary>
+        </member>
+        <member name="M:AppVOD.IHM.Filmo.Selection.VueFilm.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AppVOD.IHM.Filmo.Table.VueFilms">
+            <summary>
+            VueFilms
+            </summary>
+        </member>
+        <member name="M:AppVOD.IHM.Filmo.Table.VueFilms.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AppVOD.IHM.Filmo.Texte.VueFilm">
+            <summary>
+            VueFilm
+            </summary>
+        </member>
+        <member name="M:AppVOD.IHM.Filmo.Texte.VueFilm.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AppVOD.IHM.VOD.FenetreVOD">
+            <summary>
+            FenetreVOD
+            </summary>
+        </member>
+        <member name="M:AppVOD.IHM.VOD.FenetreVOD.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AppVOD.Modele.Filmo.Acteur">
+            <summary>
+            Définit les acteurs de la filmographie
+            </summary>
+        </member>
+        <member name="T:AppVOD.Modele.VOD.Abonne">
+            <summary>
+            Un abonne hérite de la classe Personne
+            </summary>
+        </member>
+        <member name="T:AppVOD.Properties.Resources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:AppVOD.Properties.Resources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:AppVOD.Properties.Resources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

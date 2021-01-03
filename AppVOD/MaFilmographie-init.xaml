@@ -1,0 +1,48 @@
+﻿<Filmographie xmlns="clr-namespace:AppVOD.Modele.Filmo;assembly=AppVOD" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Filmographie.Artistes>
+        <Acteur x:Name="jstewart" Nom="Stewart" Prenom="James" />
+        <Acteur x:Name="knovack" Nom="Novack" Prenom="Kim" />
+        <Acteur x:Name="lremick">
+            <Acteur.Nom>Remick</Acteur.Nom>
+            <Acteur.Prenom>Lee</Acteur.Prenom>
+        </Acteur> 
+        <MetteurEnScene x:Name="ahitchcock" Nom="Hitchcock" Prenom="Alfred" />
+        <MetteurEnScene x:Name="opreminger" Nom="Preminger" Prenom="Otto" />
+    </Filmographie.Artistes>
+    <Filmographie.Films>
+        <Film Annee="1959" Genre="Policier" Pays="US" Titre="Anatomy of a Murder">
+            <Film.MetteurEnScene>
+                <x:Reference>opreminger</x:Reference>
+            </Film.MetteurEnScene>
+            <Film.Roles>
+                <Role Personnage="Paul Biegler">
+                    <Role.Acteur>
+                        <x:Reference>jstewart</x:Reference>
+                    </Role.Acteur>
+                </Role>
+                <Role Personnage="Laura Manion">
+                    <Role.Acteur>
+                        <x:Reference>lremick</x:Reference>
+                    </Role.Acteur>
+                </Role>
+            </Film.Roles>
+        </Film>
+        <Film Annee="1958" Genre="Policier" Pays="US" Titre="Vertigo">
+            <Film.MetteurEnScene>
+                <x:Reference>ahitchcock</x:Reference>
+            </Film.MetteurEnScene> 
+            <Film.Roles>
+                <Role Personnage="John Ferguson">
+                    <Role.Acteur>
+                        <x:Reference>jstewart</x:Reference>
+                    </Role.Acteur>
+                </Role>
+                <Role Personnage="Madeleine Elster">
+                    <Role.Acteur>
+                        <x:Reference>knovack</x:Reference>
+                    </Role.Acteur>
+                </Role>
+            </Film.Roles>
+        </Film>
+    </Filmographie.Films>
+</Filmographie>

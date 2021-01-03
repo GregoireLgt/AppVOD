@@ -1,0 +1,33 @@
+﻿<Window x:Class="AppVOD.IHM.Filmo.Selection.VueFilm"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:text="clr-namespace:AppVOD.IHM.Filmo.Texte"
+    Title="VueFilm" Height="172" Width="302">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0">Titre</Label>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Path=Titre}"/>
+        <Label Grid.Row="1" Grid.Column="0">Année</Label>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=Annee}"/>
+        <Label Grid.Row="2" Grid.Column="0">Metteur en scène</Label>
+        <ComboBox Grid.Row="2" Grid.Column="1" Name="selectecteurMetteurEnScene" SelectedItem="{Binding Path=MetteurEnScene}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=Prenom}"/>
+                        <TextBlock Text=" "/>
+                        <TextBlock Text="{Binding Path=Nom}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </Grid>
+</Window>

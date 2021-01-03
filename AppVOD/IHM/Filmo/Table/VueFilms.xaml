@@ -1,0 +1,27 @@
+﻿<Window x:Class="AppVOD.IHM.Filmo.Table.VueFilms"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="VueActeurs" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListView Margin="5" Grid.Column="0" Name="listeFilms">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Titre" 
+                                        DisplayMemberBinding="{Binding Path=Titre}" />
+                        <GridViewColumn Header="Année" 
+                                        DisplayMemberBinding="{Binding Path=Annee}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.Row="1" Click="Test">Test</Button>
+    </Grid>
+</Window>

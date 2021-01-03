@@ -1,0 +1,32 @@
+﻿<Window x:Class="AppVOD.IHM.Filmo.Liste.VueFilms"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="VueFilms" Height="300" Width="300" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Name="listeFilms" Grid.Row="0" >
+            <!--<ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Path=Titre} "/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>-->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=Titre}"/>
+                        <TextBlock Text=" ("/>
+                        <TextBlock Text="{Binding Path=Annee}"/> 
+                        <TextBlock Text=")"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Grid.Row="1" Click="Test">Test</Button>
+    </Grid>
+</Window>

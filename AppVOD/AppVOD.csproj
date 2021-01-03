@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{625A6695-DD7E-4441-89E8-B495EA964E3F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AppVOD</RootNamespace>
+    <AssemblyName>AppVOD</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>doc.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>doc.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>AppVOD.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FenetreApp.xaml.cs">
+      <DependentUpon>FenetreApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IHM\Filmo\CommandesFilmo.cs" />
+    <Compile Include="IHM\Filmo\Enumeration\VueFilm.xaml.cs">
+      <DependentUpon>VueFilm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IHM\Filmo\FenetreFilmo.xaml.cs">
+      <DependentUpon>FenetreFilmo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IHM\Filmo\FenetreRole.xaml.cs">
+      <DependentUpon>FenetreRole.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IHM\Filmo\ListeGenres.cs" />
+    <Compile Include="IHM\Filmo\ListePays.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IHM\Filmo\Liste\VueFilms.xaml.cs">
+      <DependentUpon>VueFilms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IHM\Filmo\Selection\FenetreFilmographie.xaml.cs">
+      <DependentUpon>FenetreFilmographie.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IHM\Filmo\Selection\VueFilm.xaml.cs">
+      <DependentUpon>VueFilm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IHM\Filmo\Table\VueFilms.xaml.cs">
+      <DependentUpon>VueFilms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IHM\Filmo\Texte\VueFilm.xaml.cs">
+      <DependentUpon>VueFilm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IHM\VOD\CommandesVOD.cs" />
+    <Compile Include="IHM\VOD\FenetreVOD.xaml.cs">
+      <DependentUpon>FenetreVOD.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\Filmo\Acteur.cs" />
+    <Compile Include="Modele\Filmo\Artiste.cs" />
+    <Compile Include="Modele\Filmo\Film.cs" />
+    <Compile Include="Modele\Filmo\Filmographie.cs" />
+    <Compile Include="Modele\Filmo\Genre.cs" />
+    <Compile Include="Modele\Filmo\MetteurEnScene.cs" />
+    <Compile Include="Modele\Filmo\Pays.cs" />
+    <Compile Include="Modele\Filmo\Personne.cs" />
+    <Compile Include="Modele\Filmo\Role.cs" />
+    <Compile Include="Modele\ObservableObject.cs" />
+    <Compile Include="Modele\VOD\Abonne.cs" />
+    <Compile Include="Modele\VOD\Offre.cs" />
+    <Compile Include="Modele\VOD\Souscription.cs" />
+    <Compile Include="Modele\VOD\VOD.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="bin\Debug\AppVOD.vshost.exe.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="LISEZ-MOI.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="FenetreApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IHM\Filmo\Enumeration\VueFilm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IHM\Filmo\FenetreFilmo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IHM\Filmo\FenetreRole.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IHM\Filmo\Liste\VueFilms.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IHM\Filmo\Selection\FenetreFilmographie.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IHM\Filmo\Selection\VueFilm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IHM\Filmo\Table\VueFilms.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IHM\Filmo\Texte\VueFilm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IHM\VOD\FenetreVOD.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AppVOD.exe" />
+    <Content Include="bin\Debug\AppVOD.pdb" />
+    <Content Include="bin\Debug\AppVOD.vshost.exe" />
+    <Content Include="bin\Release\AppVOD.exe" />
+    <Content Include="bin\Release\AppVOD.pdb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

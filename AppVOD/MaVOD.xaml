@@ -1,0 +1,114 @@
+﻿<!-- VOD created by Gregoire Laget -->
+<vod:VOD 
+	xmlns:vod="clr-namespace:AppVOD.Modele.VOD;assembly=AppVOD"
+	 xmlns:filmo="clr-namespace:AppVOD.Modele.Filmo;assembly=AppVOD"
+	 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+>
+	<vod:VOD.Filmographie>
+		<filmo:Filmographie>
+			<filmo:Filmographie.Artistes>
+				<filmo:Acteur x:Name="jstewart" Nom="Stewart" Prenom="James" />
+				<filmo:Acteur x:Name="knovack" Nom="Novack" Prenom="Kim" />
+				<filmo:Acteur x:Name="lremick">
+					<filmo:Acteur.Nom>Remick</filmo:Acteur.Nom>
+						<filmo:Acteur.Prenom>Lee</filmo:Acteur.Prenom>
+				</filmo:Acteur>
+				<filmo:MetteurEnScene x:Name="ahitchcock" Nom="Hitchcock" Prenom="Alfred" />
+				<filmo:MetteurEnScene x:Name="opreminger" Nom="Preminger" Prenom="Otto" />
+			</filmo:Filmographie.Artistes>
+			<filmo:Filmographie.Films>
+				<filmo:Film x:Name="Murder" Annee="1959" Genre="Policier" Pays="US" Titre="Anatomy of a Murder">
+					<filmo:Film.MetteurEnScene>
+						<x:Reference>opreminger</x:Reference>
+					</filmo:Film.MetteurEnScene>
+					<filmo:Film.Roles>
+						<filmo:Role Personnage="Paul Biegler">
+							<filmo:Role.Acteur>
+								<x:Reference>jstewart</x:Reference>
+							</filmo:Role.Acteur>
+						</filmo:Role>
+						<filmo:Role Personnage="Laura Manion">
+							<filmo:Role.Acteur>
+								<x:Reference>lremick</x:Reference>
+							</filmo:Role.Acteur>
+						</filmo:Role>
+					</filmo:Film.Roles>
+				</filmo:Film>
+				<filmo:Film x:Name="Vertigo" Annee="1958" Genre="Policier" Pays="US" Titre="Vertigo">
+					<filmo:Film.MetteurEnScene>
+						<x:Reference>ahitchcock</x:Reference>
+					</filmo:Film.MetteurEnScene>
+					<filmo:Film.Roles>
+						<filmo:Role Personnage="John Ferguson">
+							<filmo:Role.Acteur>
+								<x:Reference>jstewart</x:Reference>
+							</filmo:Role.Acteur>
+						</filmo:Role>
+						<filmo:Role Personnage="Madeleine Elster">
+							<filmo:Role.Acteur>
+								<x:Reference>knovack</x:Reference>
+							</filmo:Role.Acteur>
+						</filmo:Role>
+					</filmo:Film.Roles>
+				</filmo:Film>
+			</filmo:Filmographie.Films>
+		</filmo:Filmographie>
+	</vod:VOD.Filmographie>
+	
+	
+	<vod:VOD.Abonnes>
+		<vod:Abonne x:Name="lagetgre" Nom="Laget" Prenom="Gregoire">
+			<vod:Abonne.Souscriptions>
+				<vod:Souscription Date="06.12.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Premium</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+
+				<vod:Souscription Date="02.12.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Standard</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+			</vod:Abonne.Souscriptions>
+		</vod:Abonne>
+
+		<vod:Abonne x:Name="lagetcle" Nom="Laget" Prenom="Clement">
+			<vod:Abonne.Souscriptions>
+				<vod:Souscription Date="02.11.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Standard</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+			</vod:Abonne.Souscriptions>
+		</vod:Abonne>
+
+		<vod:Abonne x:Name="lagetca" Nom="Laget" Prenom="Camille">
+			<vod:Abonne.Souscriptions>
+				<vod:Souscription Date="07.11.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Standard</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+			</vod:Abonne.Souscriptions>
+		</vod:Abonne>
+		
+		
+	</vod:VOD.Abonnes>
+	<vod:VOD.Offres>
+		
+		<vod:Offre x:Name="Standard" Cout="10">
+			<vod:Offre.Films>
+					<x:Reference>Vertigo</x:Reference>
+			</vod:Offre.Films>
+		</vod:Offre>
+
+		<vod:Offre x:Name="Premium" Cout="30">
+			<vod:Offre.Films>
+					<x:Reference>Murder</x:Reference>
+					<x:Reference>Vertigo</x:Reference>
+			</vod:Offre.Films>
+		</vod:Offre>
+	</vod:VOD.Offres>
+</vod:VOD>
+

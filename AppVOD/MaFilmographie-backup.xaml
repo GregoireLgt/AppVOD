@@ -1,0 +1,41 @@
+<Filmographie xmlns="clr-namespace:AppVOD.Modele.Filmo;assembly=AppVOD" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Filmographie.Artistes>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+  </Filmographie.Artistes>
+  <Filmographie.Films>
+    <Film Annee="1959" Genre="Policier" Pays="US" Titre="Anatomy of a Murder">
+      <Film.MetteurEnScene>
+        <MetteurEnScene x:Name="__ReferenceID4" Nom="Preminger" Prenom="Otto" />
+      </Film.MetteurEnScene>
+      <Film.Roles>
+        <Role Personnage="Paul Biegler">
+          <Role.Acteur>
+            <Acteur x:Name="__ReferenceID0" Nom="Stewart" Prenom="James" />
+          </Role.Acteur>
+        </Role>
+        <Role Personnage="Laura Manion">
+          <Role.Acteur>
+            <Acteur x:Name="__ReferenceID2" Nom="Remick" Prenom="Lee" />
+          </Role.Acteur>
+        </Role>
+      </Film.Roles>
+    </Film>
+    <Film Annee="1958" Genre="Policier" Pays="US" Titre="Vertigo">
+      <Film.MetteurEnScene>
+        <MetteurEnScene x:Name="__ReferenceID3" Nom="Hitchcock" Prenom="Alfred" />
+      </Film.MetteurEnScene>
+      <Film.Roles>
+        <Role Acteur="{x:Reference __ReferenceID0}" Personnage="John Ferguson" />
+        <Role Personnage="Madeleine Elster">
+          <Role.Acteur>
+            <Acteur x:Name="__ReferenceID1" Nom="Novack" Prenom="Kim" />
+          </Role.Acteur>
+        </Role>
+      </Film.Roles>
+    </Film>
+  </Filmographie.Films>
+</Filmographie>
