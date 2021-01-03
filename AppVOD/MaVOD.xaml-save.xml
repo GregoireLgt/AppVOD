@@ -4,7 +4,7 @@
       <Abonne.Souscriptions>
         <Souscription Date="2020-06-12">
           <Souscription.Offre>
-            <Offre x:Name="__ReferenceID3" Cout="30">
+            <Offre x:Name="__ReferenceID2" Cout="30">
               <Offre.Films>
                 <amf:Film x:Name="__ReferenceID4" Annee="1959" Genre="Policier" Pays="US" Titre="Anatomy of a Murder">
                   <amf:Film.MetteurEnScene>
@@ -42,7 +42,7 @@
         </Souscription>
         <Souscription Date="2020-02-12">
           <Souscription.Offre>
-            <Offre x:Name="__ReferenceID2" Cout="10">
+            <Offre x:Name="__ReferenceID3" Cout="10">
               <Offre.Films>
                 <x:Reference>__ReferenceID1</x:Reference>
               </Offre.Films>
@@ -51,14 +51,32 @@
         </Souscription>
       </Abonne.Souscriptions>
     </Abonne>
+    <Abonne Nom="Rabineau" Prenom="Laurene">
+      <Abonne.Souscriptions>
+        <Souscription Offre="{x:Reference __ReferenceID2}" Date="2020-06-12" />
+        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-02-12" />
+      </Abonne.Souscriptions>
+    </Abonne>
+    <Abonne Nom="Rabineau" Prenom="Tony">
+      <Abonne.Souscriptions>
+        <Souscription Offre="{x:Reference __ReferenceID2}" Date="2020-06-12" />
+        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-02-12" />
+      </Abonne.Souscriptions>
+    </Abonne>
+    <Abonne Nom="Rabineau" Prenom="Lisa">
+      <Abonne.Souscriptions>
+        <Souscription Offre="{x:Reference __ReferenceID2}" Date="2020-06-12" />
+        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-02-12" />
+      </Abonne.Souscriptions>
+    </Abonne>
     <Abonne Nom="Laget" Prenom="Clement">
       <Abonne.Souscriptions>
-        <Souscription Offre="{x:Reference __ReferenceID2}" Date="2020-02-11" />
+        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-02-11" />
       </Abonne.Souscriptions>
     </Abonne>
     <Abonne Nom="Laget" Prenom="Camille">
       <Abonne.Souscriptions>
-        <Souscription Offre="{x:Reference __ReferenceID2}" Date="2020-07-11" />
+        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-07-11" />
       </Abonne.Souscriptions>
     </Abonne>
   </VOD.Abonnes>
@@ -66,6 +84,10 @@
     <amf:Filmographie>
       <amf:Filmographie.Artistes>
         <x:Reference>__ReferenceID0</x:Reference>
+        <amf:Acteur Nom="Pitt" Prenom="Brad" />
+        <amf:Acteur Nom="Jolie" Prenom="Angelina" />
+        <amf:Acteur Nom="Cruise" Prenom="Tom" />
+        <amf:Acteur Nom="Hanks" Prenom="Tom" />
         <x:Reference>__ReferenceID5</x:Reference>
         <x:Reference>__ReferenceID6</x:Reference>
         <x:Reference>__ReferenceID7</x:Reference>
@@ -78,7 +100,7 @@
     </amf:Filmographie>
   </VOD.Filmographie>
   <VOD.Offres>
-    <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
   </VOD.Offres>
 </VOD>

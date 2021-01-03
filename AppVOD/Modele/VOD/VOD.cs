@@ -8,6 +8,11 @@ using System.Xaml;
 
 namespace AppVOD.Modele.VOD
 {
+    /// <summary>
+    /// Classe principale de la VOD
+    /// 
+    /// Elle est caractérisée par sa filmo, ses abonnés ainsi que ses offres
+    /// </summary>
     public class VOD
     {
         private Filmographie filmographie; // une VOD est composée d'une unique filmographie

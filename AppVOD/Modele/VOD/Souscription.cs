@@ -5,6 +5,9 @@ using System.Text;
 
 namespace AppVOD.Modele.VOD
 {
+    /// <summary>
+    /// Une souscription représente l'offre qu'un abonné utilise
+    /// </summary>
     public class Souscription
     {
 

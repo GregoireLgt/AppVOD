@@ -7,6 +7,9 @@ using System.Text;
 
 namespace AppVOD.Modele.VOD
 {
+    /// <summary>
+    /// Une offre est caractérisée par son coût et les films qu'elle contient
+    /// </summary>
     public class Offre
     {
         private float cout; // une offre est caractérisée par son cout

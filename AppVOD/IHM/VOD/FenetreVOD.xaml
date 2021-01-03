@@ -91,15 +91,7 @@
                                 <GridView.Columns>
                                     <GridViewColumn Header="Nom"/>
                                     <GridViewColumn Header="Prénom">
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text=""/>
-                                                    <TextBlock Text=" "/>
-                                                    <TextBlock Text=""/>
-                                                </StackPanel>
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
+                                        
                                     </GridViewColumn>
                                     <GridViewColumn Header="Souscription"/>
                                 </GridView.Columns>
