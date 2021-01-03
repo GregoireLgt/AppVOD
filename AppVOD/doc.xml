@@ -135,6 +135,23 @@
             Un abonne hérite de la classe Personne
             </summary>
         </member>
+        <member name="T:AppVOD.Modele.VOD.Offre">
+            <summary>
+            Une offre est caractérisée par son coût et les films qu'elle contient
+            </summary>
+        </member>
+        <member name="T:AppVOD.Modele.VOD.Souscription">
+            <summary>
+            Une souscription représente l'offre qu'un abonné utilise
+            </summary>
+        </member>
+        <member name="T:AppVOD.Modele.VOD.VOD">
+            <summary>
+            Classe principale de la VOD
+            
+            Elle est caractérisée par sa filmo, ses abonnés ainsi que ses offres
+            </summary>
+        </member>
         <member name="T:AppVOD.Properties.Resources">
             <summary>
               Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.

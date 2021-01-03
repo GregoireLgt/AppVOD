@@ -91,7 +91,6 @@
                                 <GridView.Columns>
                                     <GridViewColumn Header="Nom"/>
                                     <GridViewColumn Header="Prénom">
-                                        
                                     </GridViewColumn>
                                     <GridViewColumn Header="Souscription"/>
                                 </GridView.Columns>
