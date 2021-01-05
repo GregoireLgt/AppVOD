@@ -38,10 +38,12 @@ namespace AppVOD
             Debug.Assert(m2.ToString() == "Prénom NOM");
         }
 
-
+        /// <summary>
+        /// Charger la VOD
+        /// </summary>
         public void modeVOD()
         {
-            String fileNameVOD = "C:\\Users\\famil\\OneDrive\\Documents\\Gregoire_S9_Plateforme_dotNET\\AppVOD\\AppVOD\\MaVOD.xaml";
+            string fileNameVOD = "C:\\Users\\famil\\OneDrive\\Documents\\Gregoire_S9_Plateforme_dotNET\\AppVOD\\AppVOD\\MaVOD.xaml";
             VOD vod = VOD.Charger(fileNameVOD);
 
             vod.Enregistrer(fileNameVOD + "-save.xml");

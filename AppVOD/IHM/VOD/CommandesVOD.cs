@@ -6,6 +6,11 @@ using System.Windows.Input;
 
 namespace AppVOD.IHM.Filmo
 {
+    /// <summary>
+    ///
+    /// Commandes actionnables sur la VOD (à utiliser dans la FenetreVOD.xaml en les assignant à des éléments de l'interface)
+    /// 
+    /// </summary>
     public class CommandesVOD
     {
         private static RoutedUICommand quitter;
