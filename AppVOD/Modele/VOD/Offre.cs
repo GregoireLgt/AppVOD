@@ -10,9 +10,11 @@ namespace AppVOD.Modele.VOD
     /// <summary>
     /// Une offre est caractérisée par son coût et les films qu'elle contient
     /// </summary>
-    public class Offre
+    public class Offre: ObservableObject
     {
         private float cout; // une offre est caractérisée par son cout
+
+        private string nom; // une offre est caractérisée par son nom
 
         private ObservableCollection<Film> films;
 
@@ -28,10 +30,18 @@ namespace AppVOD.Modele.VOD
             get { return films; }
         }
 
+
+
+        public string Nom
+        {
+            get { return nom; }
+            set { nom = value; ObjectChanged("Nom"); }
+        }
+
         public float Cout // propriété Cout
         {
             get { return cout; }
-            set { cout = value; }
+            set { cout = value; ObjectChanged("Cout"); }
         }
 
     }

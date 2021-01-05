@@ -12,6 +12,11 @@
             App
             </summary>
         </member>
+        <member name="M:AppVOD.App.modeVOD">
+            <summary>
+            Charger la VOD
+            </summary>
+        </member>
         <member name="M:AppVOD.App.InitializeComponent">
             <summary>
             InitializeComponent
@@ -115,6 +120,13 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:AppVOD.IHM.Filmo.CommandesVOD">
+             <summary>
+            
+             Commandes actionnables sur la VOD (à utiliser dans la FenetreVOD.xaml en les assignant à des éléments de l'interface)
+             
+             </summary>
+        </member>
         <member name="T:AppVOD.IHM.VOD.FenetreVOD">
             <summary>
             FenetreVOD
@@ -133,6 +145,11 @@
         <member name="T:AppVOD.Modele.VOD.Abonne">
             <summary>
             Un abonne hérite de la classe Personne
+            </summary>
+        </member>
+        <member name="M:AppVOD.Modele.VOD.Abonne.#ctor">
+            <summary>
+            Constructeur de la classe Abonne
             </summary>
         </member>
         <member name="T:AppVOD.Modele.VOD.Offre">

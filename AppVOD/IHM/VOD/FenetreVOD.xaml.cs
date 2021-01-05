@@ -13,17 +13,17 @@ namespace AppVOD.IHM.VOD
     {
         private string fichier;
         private AppVOD.Modele.VOD.VOD vod;
+        private Abonne abonne;
         //private Filmographie filmographie;
 
         public FenetreVOD()
         {
             InitializeComponent();
+            vod = new AppVOD.Modele.VOD.VOD();
+            abonne = new Abonne();
+            DataContext = vod;
         }
 
-        private void AfficherFilm(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         public AppVOD.Modele.VOD.VOD VOD
         {
@@ -32,6 +32,7 @@ namespace AppVOD.IHM.VOD
             {
                 vod = value;
                 listeAbonnes.ItemsSource = vod.Abonnes;
+                listeOffres.ItemsSource = vod.Offres;
             }
         }
 
@@ -84,6 +85,27 @@ namespace AppVOD.IHM.VOD
 
 
         // Evenements de selection
+
+        private void AfficherAbonne(object sender, SelectionChangedEventArgs e)
+        {
+            Abonne abonne = (Abonne)listeAbonnes.SelectedItem;
+            if (abonne != null) {
+                //selecteurMetteursEnScene.SelectedItem = film.MetteurEnScene;
+            }
+        }
+
+        private void AfficherOffre(object sender, SelectionChangedEventArgs e)
+        {
+            Offre offre = (Offre)listeOffres.SelectedItem;
+            if (offre != null)
+            {
+                // TODO
+            }
+        }
+
+
+
+
 
         //    private void AfficherAbonne(object sender, SelectionChangedEventArgs e)
         //    {

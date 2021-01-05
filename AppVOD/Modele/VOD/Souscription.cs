@@ -8,7 +8,7 @@ namespace AppVOD.Modele.VOD
     /// <summary>
     /// Une souscription représente l'offre qu'un abonné utilise
     /// </summary>
-    public class Souscription
+    public class Souscription: ObservableObject
     {
 
         private Offre offre; // role de l'offre par rapport à la souscription
@@ -26,14 +26,14 @@ namespace AppVOD.Modele.VOD
         public DateTime Date // propriété Date
         {
             get { return date; }
-            set { date = value; }
+            set { date = value; ObjectChanged("Date"); }
         }
 
 
         public Offre Offre // Propriété Offre
         {
             get { return offre; }
-            set { offre = value; }
+            set { offre = value; ObjectChanged("Offre"); }
         }
     }
 

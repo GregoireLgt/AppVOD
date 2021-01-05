@@ -12,7 +12,9 @@ namespace AppVOD.Modele.VOD
 
         private ObservableCollection<Souscription> souscriptions; // un abonné peut avoir 1..plusiuers souscriptions
 
-
+        /// <summary>
+        /// Constructeur de la classe Abonne
+        /// </summary>
         public Abonne() // le constructeur de base (celui de Personne) sera appelé avant
         {
             souscriptions = new ObservableCollection<Souscription>();

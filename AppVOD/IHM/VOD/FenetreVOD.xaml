@@ -85,19 +85,17 @@
                         <ColumnDefinition Width="270*"/>
                         <ColumnDefinition Width="392*"/>
                     </Grid.ColumnDefinitions>
-                    <ListView  Margin="5" Grid.Column="0" Name="listeAbonnes" SelectionChanged="AfficherFilm" Grid.ColumnSpan="3">
+                    <ListView  Margin="5" Grid.Column="0" Name="listeAbonnes" SelectionChanged="AfficherAbonne" Grid.ColumnSpan="3">
                         <ListView.View>
                             <GridView>
                                 <GridView.Columns>
-                                    <GridViewColumn Header="Nom"/>
-                                    <GridViewColumn Header="Prénom">
-                                    </GridViewColumn>
-                                    <GridViewColumn Header="Souscription"/>
+                                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Path=Nom}"/>
+                                    <GridViewColumn Header="Prénom" DisplayMemberBinding="{Binding Path=Prenom}"/>
                                 </GridView.Columns>
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Grid  Grid.Column="3">
+                    <Grid  Grid.Column="3" DataContext="{Binding ElementName=listeAbonnes, Path=SelectedItem}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
@@ -110,10 +108,10 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Margin="5"  Grid.Row="0" Grid.Column="0">Nom</Label>
-                        <TextBox Margin="5" Grid.Row="0" Grid.Column="1"/>
+                        <TextBox Margin="5"  Grid.Row="0" Grid.Column="1" Text="{Binding Path=Nom}"/>
 
                         <Label Margin="5" Grid.Row="1" Grid.Column="0">Prénom</Label>
-                        <TextBox Margin="5" Grid.Row="1" Grid.Column="1"/>
+                        <TextBox Margin="5"  Grid.Row="1" Grid.Column="1" Text="{Binding Path=Prenom}"/>
 
                         <WrapPanel Margin="5" Grid.Row="2" Grid.Column="1" >
                             <Button MinWidth="25" Command="filmo:CommandesFilmo.AjouterRole">Ajouter</Button>
@@ -121,18 +119,21 @@
                             <Button MinWidth="25" Command="filmo:CommandesFilmo.SupprimerRole">Supprimer</Button>
                         </WrapPanel>
 
-                        <Label Margin="5" Grid.Row="3" Grid.Column="0">Souscriptions</Label>
+                        <Label Margin="5" Grid.Row="3" Grid.Column="0">Souscriptions de l'abonné</Label>
 
 
-                        <ListView Margin="5,5,5,58" Name="listeRoles" Grid.Row="3" Grid.Column="1" Grid.RowSpan="5">
+                        <ListView Margin="5,5,5,58" Name="listeSouscriptions" Grid.Row="3" Grid.Column="1" Grid.RowSpan="5" ItemsSource="{Binding Path=Souscriptions}">
                             <ListView.View>
-                                <GridView >
+                                <GridView>
                                     <GridView.Columns>
-                                        <GridViewColumn Header="Offres"/>
+                                        <GridViewColumn Width="Auto" Header="Date" DisplayMemberBinding="{Binding Path=Date}"/>
+                                        <GridViewColumn Width="Auto" Header="Type" DisplayMemberBinding="{Binding Path=Offre.Nom}"/>
+                                        <GridViewColumn Width="Auto" Header="Prix (€)" DisplayMemberBinding="{Binding Path=Offre.Cout}"/>
                                     </GridView.Columns>
                                 </GridView>
                             </ListView.View>
                         </ListView>
+                        
                     </Grid>
                 </Grid>
             </TabItem>
@@ -150,28 +151,17 @@
                         <ColumnDefinition Width="270*"/>
                         <ColumnDefinition Width="392*"/>
                     </Grid.ColumnDefinitions>
-                    <ListView  Margin="5" Grid.Column="0" Name="listeOffres" SelectionChanged="AfficherFilm" Grid.ColumnSpan="3">
+                    <ListView  Margin="5" Grid.Column="0" Name="listeOffres" SelectionChanged="AfficherOffre" Grid.ColumnSpan="3">
                         <ListView.View>
                             <GridView>
                                 <GridView.Columns>
-                                    <GridViewColumn Header="Nom"/>
-                                    <GridViewColumn Header="Coût"/>
-                                    <GridViewColumn Header="Films">
-                                        <GridViewColumn.CellTemplate>
-                                            <DataTemplate>
-                                                <StackPanel Orientation="Horizontal">
-                                                    <TextBlock/>
-                                                    <TextBlock/>
-                                                    <TextBlock/>
-                                                </StackPanel>
-                                            </DataTemplate>
-                                        </GridViewColumn.CellTemplate>
-                                    </GridViewColumn>
+                                    <GridViewColumn Header="Nom" DisplayMemberBinding="{Binding Path=Nom}"/>
+                                    <GridViewColumn Header="Coût" DisplayMemberBinding="{Binding Path=Cout}"/>
                                 </GridView.Columns>
                             </GridView>
                         </ListView.View>
                     </ListView>
-                    <Grid  Grid.Column="3">
+                    <Grid  Grid.Column="3" DataContext="{Binding ElementName=listeOffres, Path=SelectedItem}">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
@@ -182,22 +172,30 @@
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
+
                         <Label Margin="5"  Grid.Row="0" Grid.Column="0">Nom</Label>
+                        <TextBox Margin="5"  Grid.Row="0" Grid.Column="1" Text="{Binding Path=Nom}"/>
+
                         <Label Margin="5" Grid.Row="1" Grid.Column="0">Coût</Label>
-                        <TextBox Margin="5" Grid.Row="0" Grid.Column="1"/>
-                        <TextBox Margin="5" Grid.Row="1" Grid.Column="1"/>
-                        <WrapPanel Margin="5" Grid.Row="3" Grid.Column="1" >
+                        <TextBox Margin="5"  Grid.Row="1" Grid.Column="1" Text="{Binding Path=Cout}"/>
+
+                        <WrapPanel Margin="5" Grid.Row="2" Grid.Column="1" >
                             <Button MinWidth="25" Command="filmo:CommandesFilmo.AjouterRole">Ajouter</Button>
                             <Border Margin="10,0,0,0"/>
                             <Button MinWidth="25" Command="filmo:CommandesFilmo.SupprimerRole">Supprimer</Button>
                         </WrapPanel>
 
+                        <Label Margin="5" Grid.Row="3" Grid.Column="0">Liste des films de l'offre</Label>
 
-                        <ListView Margin="5,5,5,58" Name="listeFilms" Grid.Row="3" Grid.Column="1" Grid.RowSpan="5">
+                        <ListView Margin="5,5,5,58" Name="listeFilms" Grid.Row="3" Grid.Column="1" Grid.RowSpan="5" ItemsSource="{Binding Path=Films}">
                             <ListView.View>
-                                <GridView >
+                                <GridView>
                                     <GridView.Columns>
-                                        <GridViewColumn Header="Films"/>
+                                        <GridViewColumn Width="Auto" Header="Titre" DisplayMemberBinding="{Binding Path=Titre}"/>
+                                        <GridViewColumn Width="Auto" Header="Annee" DisplayMemberBinding="{Binding Path=Annee}"/>
+                                        <GridViewColumn Width="Auto" Header="Genre" DisplayMemberBinding="{Binding Path=Genre}"/>
+                                        <GridViewColumn Width="Auto" Header="Pays" DisplayMemberBinding="{Binding Path=Pays}"/>
+                                        <GridViewColumn Width="Auto" Header="Metteur en scène" DisplayMemberBinding="{Binding Path=MetteurEnScene}"/>
                                     </GridView.Columns>
                                 </GridView>
                             </ListView.View>

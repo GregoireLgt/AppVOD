@@ -3,9 +3,9 @@ using System.Collections.ObjectModel;
 
 namespace AppVOD.Modele.Filmo
 {
-    public class Film
+    public class Film : ObservableObject
     {
-        private string titre;
+        private string titre ="";
         private int annee;
         private Genre genre;
         private Pays pays;
@@ -22,31 +22,31 @@ namespace AppVOD.Modele.Filmo
         public string Titre
         {
             get { return titre; }
-            set { titre = value; }
+            set { titre = value; ObjectChanged("Titre"); }
         }
 
         public int Annee
         {
             get { return annee; }
-            set { annee = value; }
+            set { annee = value; ObjectChanged("Annee"); }
         }
 
         public Genre Genre
         {
             get { return genre; }
-            set { genre = value; }
+            set { genre = value; ObjectChanged("Genre"); }
         }
 
         public Pays Pays
         {
             get { return pays; }
-            set { pays = value; }
+            set { pays = value; ObjectChanged("Pays"); }
         }
 
         public MetteurEnScene MetteurEnScene
         {
             get { return metteurEnScene; }
-            set { metteurEnScene = value; }
+            set { metteurEnScene = value; ObjectChanged("MetteurEnScene"); }
         }
 
         public ICollection<Role> Roles

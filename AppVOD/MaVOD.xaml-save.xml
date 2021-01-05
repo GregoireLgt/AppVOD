@@ -4,7 +4,7 @@
       <Abonne.Souscriptions>
         <Souscription Date="2020-06-12">
           <Souscription.Offre>
-            <Offre x:Name="__ReferenceID2" Cout="30">
+            <Offre x:Name="__ReferenceID2" Cout="30" Nom="Premium">
               <Offre.Films>
                 <amf:Film x:Name="__ReferenceID4" Annee="1959" Genre="Policier" Pays="US" Titre="Anatomy of a Murder">
                   <amf:Film.MetteurEnScene>
@@ -42,7 +42,7 @@
         </Souscription>
         <Souscription Date="2020-02-12">
           <Souscription.Offre>
-            <Offre x:Name="__ReferenceID3" Cout="10">
+            <Offre x:Name="__ReferenceID3" Cout="10" Nom="Normal">
               <Offre.Films>
                 <x:Reference>__ReferenceID1</x:Reference>
               </Offre.Films>
