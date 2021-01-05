@@ -167,6 +167,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
@@ -187,7 +188,7 @@
 
                         <Label Margin="5" Grid.Row="3" Grid.Column="0">Liste des films de l'offre</Label>
 
-                        <ListView Margin="5,5,5,58" Name="listeFilms" Grid.Row="3" Grid.Column="1" Grid.RowSpan="5" ItemsSource="{Binding Path=Films}">
+                        <ListView Margin="5,5,5,58" Name="listeFilms" Grid.Row="3" Grid.Column="1" Grid.RowSpan="5" ItemsSource="{Binding Path=Films}" SelectionChanged="AfficherFilm">
                             <ListView.View>
                                 <GridView>
                                     <GridView.Columns>
@@ -200,6 +201,30 @@
                                 </GridView>
                             </ListView.View>
                         </ListView>
+
+                        <Label Margin="5" Grid.Row="4" Grid.Column="0">Acteurs et personnages du film</Label>
+
+                        <ListView Margin="5" Name="listeRoles" Grid.Row="4" Grid.Column="1" ItemsSource="{Binding Path=Roles}">
+                            <ListView.View>
+                                <GridView >
+                                    <GridView.Columns>
+                                        <GridViewColumn Header="Acteur">
+                                            <GridViewColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <TextBlock Text="{Binding Path=Acteur.Prenom}"/>
+                                                        <TextBlock Text=" "/>
+                                                        <TextBlock Text="{Binding Path=Acteur.Nom}"/>
+                                                    </StackPanel>
+                                                </DataTemplate>
+                                            </GridViewColumn.CellTemplate>
+                                        </GridViewColumn>
+                                        <GridViewColumn Header="Personnage" DisplayMemberBinding="{Binding Path=Personnage}"/>
+                                    </GridView.Columns>
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                        
                     </Grid>
                 </Grid>
             </TabItem>

@@ -14,14 +14,14 @@ namespace AppVOD.IHM.VOD
         private string fichier;
         private AppVOD.Modele.VOD.VOD vod;
         private Abonne abonne;
-        //private Filmographie filmographie;
+        private Filmographie filmographie;
 
         public FenetreVOD()
         {
             InitializeComponent();
             vod = new AppVOD.Modele.VOD.VOD();
             abonne = new Abonne();
-            DataContext = vod;
+            DataContext = this;
         }
 
 
@@ -33,6 +33,7 @@ namespace AppVOD.IHM.VOD
                 vod = value;
                 listeAbonnes.ItemsSource = vod.Abonnes;
                 listeOffres.ItemsSource = vod.Offres;
+                //listeActeurs.ItemsSource = filmographie.Acteurs;
             }
         }
 
@@ -100,6 +101,24 @@ namespace AppVOD.IHM.VOD
             if (offre != null)
             {
                 // TODO
+            }
+        }
+
+        private void AfficherFilm(object sender, SelectionChangedEventArgs e)
+        {
+            Film film = (Film)listeFilms.SelectedItem;
+            if (film != null)
+            {
+
+            }
+        }
+
+        private void AfficherActeur(object sender, SelectionChangedEventArgs e)
+        {
+            Acteur acteur = (Acteur)listeRoles.SelectedItem;
+            if (acteur != null)
+            {
+
             }
         }
 
