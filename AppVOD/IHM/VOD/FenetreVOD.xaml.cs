@@ -193,8 +193,8 @@ namespace AppVOD.IHM.VOD
             bool? ok = fenetreSouscription.ShowDialog();
             if (ok == true)
             {
-                Souscription souscriptionAAjouter = new Souscription(); // par defaut la date est mise à la date d'aujd --> voir constructeur
-                souscriptionAAjouter.Offre = (Offre)fenetreSouscription.selecteurOffre.SelectedItem;
+                Souscription souscriptionAAjouter = new Souscription(); // par defaut la date est la date du jour courant --> voir constructeur de Souscription
+                souscriptionAAjouter.Offre = (Offre)fenetreSouscription.selecteurOffre.SelectedItem;  // permet de set l'offre de la souscription
 
                 Abonne abonneSelectionne = (Abonne)listeAbonnes.SelectedItem;
                 abonneSelectionne.Souscriptions.Add(souscriptionAAjouter);

@@ -6,7 +6,7 @@
         <DataTemplate x:Key="ModeleOffre">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="{Binding Path=Nom}"/>
-                <TextBlock Text="-"/>
+                <TextBlock Text=" "/>
                 <TextBlock Text="{Binding Path=Cout}"/>
             </StackPanel>
         </DataTemplate>
