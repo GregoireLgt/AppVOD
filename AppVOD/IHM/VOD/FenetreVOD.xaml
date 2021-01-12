@@ -181,9 +181,9 @@
                         <TextBox Margin="5"  Grid.Row="1" Grid.Column="1" Text="{Binding Path=Cout}"/>
 
                         <WrapPanel Margin="5" Grid.Row="2" Grid.Column="1" >
-                            <Button MinWidth="25" Command="filmo:CommandesFilmo.AjouterRole">Ajouter</Button>
+                            <Button MinWidth="25" Command="filmo:CommandesFilmo.AjouterRole">Ajouter Film</Button>
                             <Border Margin="10,0,0,0"/>
-                            <Button MinWidth="25" Command="filmo:CommandesFilmo.SupprimerRole">Supprimer</Button>
+                            <Button MinWidth="25" Command="filmo:CommandesFilmo.SupprimerRole">Supprimer Film</Button>
                         </WrapPanel>
 
                         <Label Margin="5" Grid.Row="3" Grid.Column="0">Liste des films de l'offre</Label>
