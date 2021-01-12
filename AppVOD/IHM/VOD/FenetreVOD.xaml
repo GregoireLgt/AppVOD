@@ -24,6 +24,13 @@
         <CommandBinding Command="ApplicationCommands.Open" Executed="Ouvrir"/>
         <CommandBinding Command="ApplicationCommands.Save" Executed="Enregistrer" CanExecute="EnregistrerPossible"/>
         <CommandBinding Command="ApplicationCommands.SaveAs" Executed="EnregistrerSous" CanExecute="EnregistrerPossible"/>
+        <CommandBinding Command="vod:CommandesVOD.AjouterElement" Executed="AjouterElement" CanExecute="AjouterElementPossible"/>
+        <CommandBinding Command="ApplicationCommands.Delete" Executed="SupprimerElement" CanExecute="SupprimerElementPossible"/>
+        <CommandBinding Command="vod:CommandesVOD.AjouterFilm" Executed="AjouterFilm" CanExecute="AjouterFilmPossible"/>
+
+        <CommandBinding Command="vod:CommandesVOD.SupprimerFilm" Executed="SupprimerFilm" CanExecute="SupprimerFilmPossible"/>
+        <CommandBinding Command="vod:CommandesVOD.AjouterSouscription" Executed="AjouterSouscription" CanExecute="AjouterSouscriptionPossible"/>
+        <CommandBinding Command="vod:CommandesVOD.SupprimerSouscription" Executed="SupprimerSouscription" CanExecute="SupprimerSouscriptionPossible"/>
     </Window.CommandBindings>
 
 
@@ -64,9 +71,10 @@
         </Menu>
 
         <!-- SECOND LINE OF GRID IN WINDOW-->
+        <!-- Used to add elements (abonnes and offres) -->
 
         <ToolBar Grid.Row="1">
-            <Button MinWidth="25" Command="">Ajouter</Button>
+            <Button MinWidth="25" Command="vod:CommandesVOD.AjouterElement">Ajouter</Button>
             <Button MinWidth="25" Command="ApplicationCommands.Delete">Supprimer</Button>
         </ToolBar>
 
@@ -114,9 +122,9 @@
                         <TextBox Margin="5"  Grid.Row="1" Grid.Column="1" Text="{Binding Path=Prenom}"/>
 
                         <WrapPanel Margin="5" Grid.Row="2" Grid.Column="1" >
-                            <Button MinWidth="25" Command="filmo:CommandesFilmo.AjouterRole">Ajouter</Button>
+                            <Button MinWidth="25"  Command="vod:CommandesVOD.AjouterSouscription">Ajouter souscription</Button>
                             <Border Margin="10,0,0,0"/>
-                            <Button MinWidth="25" Command="filmo:CommandesFilmo.SupprimerRole">Supprimer</Button>
+                            <Button MinWidth="25" Command="vod:CommandesVOD.SupprimerSouscription">Supprimer souscription</Button>
                         </WrapPanel>
 
                         <Label Margin="5" Grid.Row="3" Grid.Column="0">Souscriptions de l'abonné</Label>
@@ -181,9 +189,9 @@
                         <TextBox Margin="5"  Grid.Row="1" Grid.Column="1" Text="{Binding Path=Cout}"/>
 
                         <WrapPanel Margin="5" Grid.Row="2" Grid.Column="1" >
-                            <Button MinWidth="25" Command="filmo:CommandesFilmo.AjouterRole">Ajouter Film</Button>
+                            <Button MinWidth="25" Command="vod:CommandesVOD.AjouterFilm">Ajouter Film</Button>
                             <Border Margin="10,0,0,0"/>
-                            <Button MinWidth="25" Command="filmo:CommandesFilmo.SupprimerRole">Supprimer Film</Button>
+                            <Button MinWidth="25" Command="vod:CommandesVOD.SupprimerFilm">Supprimer Film</Button>
                         </WrapPanel>
 
                         <Label Margin="5" Grid.Row="3" Grid.Column="0">Liste des films de l'offre</Label>
@@ -204,7 +212,7 @@
 
                         <Label Margin="5" Grid.Row="4" Grid.Column="0">Acteurs et personnages du film</Label>
 
-                        <ListView Margin="5" Name="listeRoles" Grid.Row="4" Grid.Column="1" ItemsSource="{Binding Path=Roles}">
+                        <ListView Margin="5" Name="listeRoles" Grid.Row="4" Grid.Column="1" ItemsSource="{Binding Path=SelectedItem.Roles}">
                             <ListView.View>
                                 <GridView >
                                     <GridView.Columns>

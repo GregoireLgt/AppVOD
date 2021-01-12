@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 
-namespace AppVOD.IHM.Filmo
+namespace AppVOD.IHM.VOD
 {
     /// <summary>
     ///
@@ -15,15 +15,21 @@ namespace AppVOD.IHM.Filmo
     {
         private static RoutedUICommand quitter;
         private static RoutedUICommand ajouterElement;
-        private static RoutedUICommand ajouterRole;
-        private static RoutedUICommand supprimerRole;
+        private static RoutedUICommand ajouterFilm;
+        private static RoutedUICommand supprimerFilm;
+        private static RoutedUICommand ajouterSouscription;
+        private static RoutedUICommand supprimerSouscription;
+
 
         static CommandesVOD()
         {
             quitter = new RoutedUICommand("Quitter", "Quitter", typeof(CommandesVOD));
             ajouterElement = new RoutedUICommand("Ajouter élément", "AjouterElement", typeof(CommandesVOD));
-            ajouterRole = new RoutedUICommand("Ajouter rôle", "AjouterRole", typeof(CommandesVOD));
-            supprimerRole = new RoutedUICommand("Supprimer rôle", "SupprimerRole", typeof(CommandesVOD));
+            ajouterFilm = new RoutedUICommand("Ajouter film", "AjouterFilm", typeof(CommandesVOD));
+            supprimerFilm = new RoutedUICommand("Supprimer film", "SupprimerFilm", typeof(CommandesVOD));
+            ajouterSouscription = new RoutedUICommand("Ajouter souscription", "AjouterSouscription", typeof(CommandesVOD));
+            supprimerSouscription = new RoutedUICommand("Supprimer souscription", "SupprimerSouscription", typeof(CommandesVOD));
+
         }
 
         public static RoutedUICommand Quitter
@@ -36,14 +42,22 @@ namespace AppVOD.IHM.Filmo
             get { return ajouterElement; }
         }
 
-        public static RoutedUICommand AjouterRole
+        public static RoutedUICommand AjouterFilm
         {
-            get { return ajouterRole; }
+            get { return ajouterFilm; }
+        }
+        public static RoutedUICommand SupprimerFilm
+        {
+            get { return supprimerFilm; }
         }
 
-        public static RoutedUICommand SupprimerRole
+        public static RoutedUICommand AjouterSouscription
         {
-            get { return supprimerRole; }
+            get { return ajouterSouscription; }
+        }
+        public static RoutedUICommand SupprimerSouscription
+        {
+            get { return supprimerSouscription; }
         }
     }
 }

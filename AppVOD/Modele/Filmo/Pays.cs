@@ -5,6 +5,6 @@ namespace AppVOD.Modele.Filmo
 {
     public enum Pays
     {
-        FR, UK, US
+        FR, UK, US, ES, RU, CHI, IT, SUE, PORT, JPN
     }
 }

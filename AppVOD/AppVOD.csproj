@@ -112,6 +112,12 @@
       <DependentUpon>VueFilm.xaml</DependentUpon>
     </Compile>
     <Compile Include="IHM\VOD\CommandesVOD.cs" />
+    <Compile Include="IHM\VOD\FenetreSouscription.xaml.cs">
+      <DependentUpon>FenetreSouscription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IHM\VOD\FenetreFilm.xaml.cs">
+      <DependentUpon>FenetreFilm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="IHM\VOD\FenetreVOD.xaml.cs">
       <DependentUpon>FenetreVOD.xaml</DependentUpon>
     </Compile>
@@ -213,6 +219,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="IHM\Filmo\Texte\VueFilm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IHM\VOD\FenetreSouscription.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="IHM\VOD\FenetreFilm.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

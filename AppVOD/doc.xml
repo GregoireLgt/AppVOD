@@ -120,16 +120,41 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:AppVOD.IHM.Filmo.CommandesVOD">
+        <member name="T:AppVOD.IHM.VOD.CommandesVOD">
              <summary>
             
              Commandes actionnables sur la VOD (à utiliser dans la FenetreVOD.xaml en les assignant à des éléments de l'interface)
              
              </summary>
         </member>
+        <member name="T:AppVOD.IHM.VOD.FenetreSouscription">
+            <summary>
+            FenetreSouscription
+            </summary>
+        </member>
+        <member name="M:AppVOD.IHM.VOD.FenetreSouscription.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AppVOD.IHM.VOD.FenetreFilm">
+            <summary>
+            FenetreFilm
+            </summary>
+        </member>
+        <member name="M:AppVOD.IHM.VOD.FenetreFilm.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:AppVOD.IHM.VOD.FenetreVOD">
             <summary>
             FenetreVOD
+            </summary>
+        </member>
+        <member name="M:AppVOD.IHM.VOD.FenetreVOD.#ctor">
+            <summary>
+            Constructeur FenetreVOD
             </summary>
         </member>
         <member name="M:AppVOD.IHM.VOD.FenetreVOD.InitializeComponent">

@@ -22,6 +22,8 @@ namespace AppVOD.Modele.VOD
         public Offre()
         {
             films = new ObservableCollection<Film>();
+            cout = 0;
+            nom = "nomDeLaNouvelleOffre";
 
         }
 

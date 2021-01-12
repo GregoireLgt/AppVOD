@@ -4,12 +4,12 @@ using AppVOD.Modele.Filmo;
 
 namespace AppVOD.IHM.Filmo
 {
-    public class ListeGenres : ObservableCollection<string>
+    public class ListeGenres : ObservableCollection<Genre>
     {
         public ListeGenres()
         {
-            foreach (string s in Enum.GetNames(typeof(Genre)))
-                Add(s);
+            foreach (Genre g in Enum.GetValues(typeof(Genre)))
+                Add(g);
         }
     }
 }

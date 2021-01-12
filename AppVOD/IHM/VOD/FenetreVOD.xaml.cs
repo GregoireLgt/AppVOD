@@ -1,8 +1,10 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
+using AppVOD.IHM.Filmo;
 using AppVOD.Modele.Filmo;
 using AppVOD.Modele.VOD;
 using Microsoft.Win32;
@@ -16,6 +18,9 @@ namespace AppVOD.IHM.VOD
         private Abonne abonne;
         private Filmographie filmographie;
 
+        /// <summary>
+        /// Constructeur FenetreVOD
+        /// </summary>
         public FenetreVOD()
         {
             InitializeComponent();
@@ -90,8 +95,8 @@ namespace AppVOD.IHM.VOD
         private void AfficherAbonne(object sender, SelectionChangedEventArgs e)
         {
             Abonne abonne = (Abonne)listeAbonnes.SelectedItem;
-            if (abonne != null) {
-                //selecteurMetteursEnScene.SelectedItem = film.MetteurEnScene;
+            if (abonne != null)
+            {
             }
         }
 
@@ -122,137 +127,138 @@ namespace AppVOD.IHM.VOD
             }
         }
 
+        // Gestion des éléments (Abonnes et offres)
+        private void AjouterElement(object sender, RoutedEventArgs e)
+        {
+            switch (onglets.SelectedIndex)
+            {
+                case 0:
+                    Abonne abonne = new Abonne();
+                    VOD.Abonnes.Add(abonne);
+                    listeAbonnes.SelectedItem = abonne;
+                    break;
+                case 1:
+                    Offre offre = new Offre();
+                    VOD.Offres.Add(offre);
+                    listeOffres.SelectedItem = offre;
+                    break;
+            }
+        }
 
+        private void AjouterElementPossible(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = (VOD != null);
+        }
 
+        private void SupprimerElement(object sender, RoutedEventArgs e)
+        {
+            switch (onglets.SelectedIndex)
+            {
+                case 0:
+                    Abonne abonne = (Abonne)listeAbonnes.SelectedItem;
+                    VOD.Abonnes.Remove(abonne);
+                    break;
+                case 1:
+                    Offre offre = (Offre)listeOffres.SelectedItem;
+                    VOD.Offres.Remove(offre);
+                    break;
+            }
+        }
 
+        private void SupprimerElementPossible(object sender, CanExecuteRoutedEventArgs e)
+        {
+            ListView liste = null;
+            if (onglets != null)
+            {
+                switch (onglets.SelectedIndex)
+                {
+                    case 0:
+                        liste = listeAbonnes;
+                        break;
+                    case 1:
+                        liste = listeOffres;
+                        break;
+                }
+                e.CanExecute = (vod != null) && (liste.SelectedItem != null);
+            }
+            else
+                e.CanExecute = false;
+        }
 
-        //    private void AfficherAbonne(object sender, SelectionChangedEventArgs e)
-        //    {
-        //        Abonne abonne = (Abonne)listeAbonnes.SelectedItem;
-        //        if (film != null)
-        //            selecteurMetteursEnScene.SelectedItem = film.MetteurEnScene;
-        //    }
+        private void AjouterSouscription(object sender, RoutedEventArgs e)
+        {
+            FenetreSouscription fenetreSouscription = new FenetreSouscription();
 
-        //    private void DefinirMetteurEnScene(object sender, SelectionChangedEventArgs e)
-        //    {
-        //        Film film = (Film)listeFilms.SelectedItem;
-        //        if (film != null)
-        //        {
-        //            MetteurEnScene metteurEnScene = (MetteurEnScene)selecteurMetteursEnScene.SelectedItem;
-        //            film.MetteurEnScene = metteurEnScene;
-        //        }
-        //    }
+            fenetreSouscription.selecteurOffre.ItemsSource = VOD.Offres; // n'affiche pas correctement le nom et le cout
+            bool? ok = fenetreSouscription.ShowDialog();
+            if (ok == true)
+            {
+                Souscription souscriptionAAjouter = new Souscription(); // par defaut la date est mise à la date d'aujd --> voir constructeur
+                souscriptionAAjouter.Offre = (Offre)fenetreSouscription.selecteurOffre.SelectedItem;
 
-        //    // Gestion des éléments (films, acteurs et metteurs en scène)
+                Abonne abonneSelectionne = (Abonne)listeAbonnes.SelectedItem;
+                abonneSelectionne.Souscriptions.Add(souscriptionAAjouter);
+            }
+        }
 
-        //    private void AjouterElement(object sender, RoutedEventArgs e)
-        //    {
-        //        switch (onglets.SelectedIndex)
-        //        {
-        //            case 0:
-        //                Film film = new Film();
-        //                Filmographie.Films.Add(film);
-        //                listeFilms.SelectedItem = film;
-        //                break;
-        //            case 1:
-        //                MetteurEnScene metteurEnScene = new MetteurEnScene();
-        //                Filmographie.Artistes.Add(metteurEnScene);
-        //                listeMetteursEnScene.SelectedItem = metteurEnScene;
-        //                break;
-        //            case 2:
-        //                Acteur acteur = new Acteur();
-        //                Filmographie.Artistes.Add(acteur);
-        //                listeActeurs.SelectedItem = acteur;
-        //                break;
-        //        }
-        //    }
+        private void AjouterSouscriptionPossible(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = (listeAbonnes.SelectedItem != null);
 
-        //    private void AjouterElementPossible(object sender, CanExecuteRoutedEventArgs e)
-        //    {
-        //        e.CanExecute = (Filmographie != null);
-        //    }
+        }
+        private void SupprimerSouscription(object sender, RoutedEventArgs e)
+        {
+            Abonne abonneSelectionne = (Abonne)listeAbonnes.SelectedItem;
+            Souscription souscriptionASupprimer = (Souscription)listeSouscriptions.SelectedItem;
+            abonneSelectionne.Souscriptions.Remove(souscriptionASupprimer);
+        }
 
-        //    private void SupprimerElement(object sender, RoutedEventArgs e)
-        //    {
-        //        switch (onglets.SelectedIndex)
-        //        {
-        //            case 0:
-        //                Film film = (Film)listeFilms.SelectedItem;
-        //                Filmographie.Films.Remove(film);
-        //                break;
-        //            case 1:
-        //                MetteurEnScene metteurEnScene = (MetteurEnScene)listeMetteursEnScene.SelectedItem;
-        //                Filmographie.Artistes.Remove(metteurEnScene);
-        //                break;
-        //            case 2:
-        //                Acteur acteur = (Acteur)listeActeurs.SelectedItem;
-        //                Filmographie.Artistes.Remove(acteur);
-        //                break;
-        //        }
-        //    }
+        private void SupprimerSouscriptionPossible(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = (vod != null) && (listeSouscriptions.SelectedItem != null);
+        }
 
-        //    private void SupprimerElementPossible(object sender, CanExecuteRoutedEventArgs e)
-        //    {
-        //        ListView liste = null;
-        //        if (onglets != null)
-        //        {
-        //            switch (onglets.SelectedIndex)
-        //            {
-        //                case 0:
-        //                    liste = listeFilms;
-        //                    break;
-        //                case 1:
-        //                    liste = listeMetteursEnScene;
-        //                    break;
-        //                case 2:
-        //                    liste = listeActeurs;
-        //                    break;
-        //            }
-        //            e.CanExecute = (filmographie != null) && (liste.SelectedItem != null);
-        //        }
-        //        else
-        //            e.CanExecute = false;
-        //    }
+        private void AjouterFilm(object sender, RoutedEventArgs e)
+        {
 
+            ListeGenres listeGenres = new ListeGenres(); // on recupere la liste des genres existants
+            ListePays listePays = new ListePays(); // on recupere la liste des pays existants
+            FenetreFilm fenetreFilm = new FenetreFilm(); 
+            
+            fenetreFilm.selecteurMetteurEnScene.ItemsSource = VOD.Filmographie.MetteursEnScene;
+            fenetreFilm.selecteurGenre.ItemsSource = listeGenres;
+            fenetreFilm.selecteurPays.ItemsSource = listePays;
 
-        //    // Gestion des roles d'un film
+            bool? ok = fenetreFilm.ShowDialog();
+            if (ok == true)
+            {
+                Film film = new Film();
+                film.Titre = fenetreFilm.titre.Text;
+                film.Annee = Convert.ToInt32(fenetreFilm.annee.Text);
+                film.Genre = (Genre)fenetreFilm.selecteurGenre.SelectedItem;
+                film.Pays = (Pays)fenetreFilm.selecteurPays.SelectedItem;
+                film.MetteurEnScene = (MetteurEnScene)fenetreFilm.selecteurMetteurEnScene.SelectedItem;
 
-        //    private void AjouterRole(object sender, RoutedEventArgs e)
-        //    {
-        //        FenetreRole fenetreRole = new FenetreRole();
-        //        fenetreRole.selecteurActeur.ItemsSource = filmographie.Acteurs;
-        //        bool? ok = fenetreRole.ShowDialog();
-        //        if (ok == true)
-        //        {
-        //            Role role = new Role();
-        //            role.Acteur = (Acteur)fenetreRole.selecteurActeur.SelectedItem;
-        //            role.Personnage = fenetreRole.personnage.Text;
-        //            Film film = (Film)listeFilms.SelectedItem;
-        //            film.Roles.Add(role);
-        //        }
-        //    }
+                Offre offreSelectionnee = (Offre)listeOffres.SelectedItem;
+                offreSelectionnee.Films.Add(film);
+            }
+        }
+        private void AjouterFilmPossible(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = (listeOffres.SelectedItem != null);
+        }
 
-        //    private void AjouterRolePossible(object sender, CanExecuteRoutedEventArgs e)
-        //    {
-        //        e.CanExecute = (listeFilms.SelectedItem != null);
-        //    }
+        private void SupprimerFilm(object sender, RoutedEventArgs e)
+        {
+            Offre offreSelectionnee = (Offre)listeOffres.SelectedItem;
+            Film filmASupprimer = (Film)listeFilms.SelectedItem;
+            offreSelectionnee.Films.Remove(filmASupprimer);
+        }
 
-        //    private void SupprimerRole(object sender, RoutedEventArgs e)
-        //    {
-        //        Role role = (Role)listeRoles.SelectedItem;
-        //        Film film = (Film)listeFilms.SelectedItem;
-        //        film.Roles.Remove(role);
-        //    }
-
-        //    private void SupprimerRolePossible(object sender, CanExecuteRoutedEventArgs e)
-        //    {
-        //        e.CanExecute = (listeRoles != null) && (listeRoles.SelectedItem != null);
-        //    }
-
-        //    private void onglets_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        //    {
-
-        //    }
-        //}
+        private void SupprimerFilmPossible(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = (vod != null) && (listeFilms.SelectedItem != null);
+        }
     }
+       
 }
