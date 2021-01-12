@@ -177,7 +177,7 @@
                         <Label Margin="5"  Grid.Row="0" Grid.Column="0">Nom</Label>
                         <TextBox Margin="5"  Grid.Row="0" Grid.Column="1" Text="{Binding Path=Nom}"/>
 
-                        <Label Margin="5" Grid.Row="1" Grid.Column="0">Coût</Label>
+                        <Label Margin="5" Grid.Row="1" Grid.Column="0">Coût (€/mois)</Label>
                         <TextBox Margin="5"  Grid.Row="1" Grid.Column="1" Text="{Binding Path=Cout}"/>
 
                         <WrapPanel Margin="5" Grid.Row="2" Grid.Column="1" >
