@@ -250,7 +250,7 @@
 			</vod:Abonne.Souscriptions>
 		</vod:Abonne>
 
-		<vod:Abonne x:Name="rabineaulau" Nom="Rabineau" Prenom="Laurène">
+		<vod:Abonne x:Name="rabineaulau" Nom="Rabineau" Prenom="Laurene">
 			<vod:Abonne.Souscriptions>
 				<vod:Souscription Date="04.04.2019">
 					<vod:Souscription.Offre>
