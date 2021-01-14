@@ -18,7 +18,7 @@
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
-    
+
     <Window.CommandBindings>
         <CommandBinding Command="ApplicationCommands.New" Executed="Nouveau"/>
         <CommandBinding Command="ApplicationCommands.Open" Executed="Ouvrir"/>
@@ -141,12 +141,12 @@
                                 </GridView>
                             </ListView.View>
                         </ListView>
-                        
+
                     </Grid>
                 </Grid>
             </TabItem>
 
-            
+
             <!-- SECOND TAB OF THE WINDOW-->
             <TabItem Header="Offres">
                 <Grid>
@@ -194,9 +194,43 @@
                             <Button MinWidth="25" Command="vod:CommandesVOD.SupprimerFilm">Supprimer Film</Button>
                         </WrapPanel>
 
-                        <Label Margin="5" Grid.Row="3" Grid.Column="0">Liste des films de l'offre</Label>
-
+                        <Label Margin="5" Grid.Row="3" Grid.Column="0">
+                            <TextBlock>
+                            Liste des films de l'offre<LineBreak/>(survoler pour voir les acteurs)
+                            </TextBlock>
+                        </Label>
+                        
                         <ListView Margin="5,5,5,58" Name="listeFilms" Grid.Row="3" Grid.Column="1" Grid.RowSpan="5" ItemsSource="{Binding Path=Films}" SelectionChanged="AfficherFilm">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="{x:Type ListViewItem}">
+                                    <Setter Property="ToolTip">
+                                        <Setter.Value>
+                                            <UniformGrid Columns="1">
+                                                <ListView Margin="5" Name="listeRoles" ItemsSource="{Binding Path=Roles}">
+                                                    <ListView.View>
+                                                        <GridView >
+                                                            <GridView.Columns>
+                                                                <GridViewColumn Header="Acteur" Width="Auto">
+                                                                    <GridViewColumn.CellTemplate>
+                                                                        <DataTemplate>
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <TextBlock Text="{Binding Path=Acteur.Prenom}"/>
+                                                                                <TextBlock Text=" "/>
+                                                                                <TextBlock Text="{Binding Path=Acteur.Nom}"/>
+                                                                            </StackPanel>
+                                                                        </DataTemplate>
+                                                                    </GridViewColumn.CellTemplate>
+                                                                </GridViewColumn>
+                                                                <GridViewColumn Header="Personnage" DisplayMemberBinding="{Binding Path=Personnage}"/>
+                                                            </GridView.Columns>
+                                                        </GridView>
+                                                    </ListView.View>
+                                                </ListView>
+                                            </UniformGrid>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListView.ItemContainerStyle>
                             <ListView.View>
                                 <GridView>
                                     <GridView.Columns>
@@ -209,30 +243,6 @@
                                 </GridView>
                             </ListView.View>
                         </ListView>
-
-                        <Label Margin="5" Grid.Row="4" Grid.Column="0">Acteurs et personnages du film</Label>
-
-                        <ListView Margin="5" Name="listeRoles" Grid.Row="4" Grid.Column="1" ItemsSource="{Binding Path=SelectedItem.Roles}">
-                            <ListView.View>
-                                <GridView >
-                                    <GridView.Columns>
-                                        <GridViewColumn Header="Acteur">
-                                            <GridViewColumn.CellTemplate>
-                                                <DataTemplate>
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <TextBlock Text="{Binding Path=Acteur.Prenom}"/>
-                                                        <TextBlock Text=" "/>
-                                                        <TextBlock Text="{Binding Path=Acteur.Nom}"/>
-                                                    </StackPanel>
-                                                </DataTemplate>
-                                            </GridViewColumn.CellTemplate>
-                                        </GridViewColumn>
-                                        <GridViewColumn Header="Personnage" DisplayMemberBinding="{Binding Path=Personnage}"/>
-                                    </GridView.Columns>
-                                </GridView>
-                            </ListView.View>
-                        </ListView>
-                        
                     </Grid>
                 </Grid>
             </TabItem>

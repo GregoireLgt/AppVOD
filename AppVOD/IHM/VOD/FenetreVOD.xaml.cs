@@ -118,13 +118,13 @@ namespace AppVOD.IHM.VOD
             }
         }
 
-        private void AfficherActeur(object sender, SelectionChangedEventArgs e)
+        private void AfficherRoles(object sender, SelectionChangedEventArgs e)
         {
-            Acteur acteur = (Acteur)listeRoles.SelectedItem;
-            if (acteur != null)
-            {
 
-            }
+            Film filmSelectionne = (Film)listeFilms.SelectedItem; // on recupere le film selectionne dans la ListView de films
+            if (filmSelectionne != null)
+            {
+            }           
         }
 
         // Gestion des éléments (Abonnes et offres)
@@ -189,7 +189,7 @@ namespace AppVOD.IHM.VOD
         {
             FenetreSouscription fenetreSouscription = new FenetreSouscription();
 
-            fenetreSouscription.selecteurOffre.ItemsSource = VOD.Offres; // n'affiche pas correctement le nom et le cout
+            fenetreSouscription.selecteurOffre.ItemsSource = VOD.Offres; // n'affiche pas correctement le nom et le cout --> car Offres n'est pas une ICollectionView...
             bool? ok = fenetreSouscription.ShowDialog();
             if (ok == true)
             {
