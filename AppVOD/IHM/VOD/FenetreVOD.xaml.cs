@@ -38,7 +38,6 @@ namespace AppVOD.IHM.VOD
                 vod = value;
                 listeAbonnes.ItemsSource = vod.Abonnes;
                 listeOffres.ItemsSource = vod.Offres;
-                //listeActeurs.ItemsSource = filmographie.Acteurs;
             }
         }
 
@@ -87,44 +86,6 @@ namespace AppVOD.IHM.VOD
         private void Quitter(object sender, RoutedEventArgs e)
         {
             Close();
-        }
-
-
-        // Evenements de selection
-
-        private void AfficherAbonne(object sender, SelectionChangedEventArgs e)
-        {
-            Abonne abonne = (Abonne)listeAbonnes.SelectedItem;
-            if (abonne != null)
-            {
-            }
-        }
-
-        private void AfficherOffre(object sender, SelectionChangedEventArgs e)
-        {
-            Offre offre = (Offre)listeOffres.SelectedItem;
-            if (offre != null)
-            {
-                // TODO
-            }
-        }
-
-        private void AfficherFilm(object sender, SelectionChangedEventArgs e)
-        {
-            Film film = (Film)listeFilms.SelectedItem;
-            if (film != null)
-            {
-
-            }
-        }
-
-        private void AfficherRoles(object sender, SelectionChangedEventArgs e)
-        {
-
-            Film filmSelectionne = (Film)listeFilms.SelectedItem; // on recupere le film selectionne dans la ListView de films
-            if (filmSelectionne != null)
-            {
-            }           
         }
 
         // Gestion des éléments (Abonnes et offres)

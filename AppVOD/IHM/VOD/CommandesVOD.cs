@@ -20,7 +20,6 @@ namespace AppVOD.IHM.VOD
         private static RoutedUICommand ajouterSouscription;
         private static RoutedUICommand supprimerSouscription;
 
-
         static CommandesVOD()
         {
             quitter = new RoutedUICommand("Quitter", "Quitter", typeof(CommandesVOD));
@@ -29,7 +28,6 @@ namespace AppVOD.IHM.VOD
             supprimerFilm = new RoutedUICommand("Supprimer film", "SupprimerFilm", typeof(CommandesVOD));
             ajouterSouscription = new RoutedUICommand("Ajouter souscription", "AjouterSouscription", typeof(CommandesVOD));
             supprimerSouscription = new RoutedUICommand("Supprimer souscription", "SupprimerSouscription", typeof(CommandesVOD));
-
         }
 
         public static RoutedUICommand Quitter
@@ -55,6 +53,7 @@ namespace AppVOD.IHM.VOD
         {
             get { return ajouterSouscription; }
         }
+
         public static RoutedUICommand SupprimerSouscription
         {
             get { return supprimerSouscription; }
