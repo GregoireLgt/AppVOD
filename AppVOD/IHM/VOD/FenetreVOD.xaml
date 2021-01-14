@@ -4,7 +4,7 @@
     xmlns:filmo="clr-namespace:AppVOD.IHM.Filmo"
     xmlns:vod="clr-namespace:AppVOD.IHM.VOD;assembly=AppVOD"
     x:Class="AppVOD.IHM.VOD.FenetreVOD"
-    Title="VOD App" Height="600" Width="800">
+    Title="VOD App by Grégoire Laget © - Created for educational purposes - ESEO 2021" Height="600" Width="800">
 
 
     <Window.Resources>
