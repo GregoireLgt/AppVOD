@@ -206,22 +206,22 @@
                                     <Setter Property="ToolTip">
                                         <Setter.Value>
                                             <UniformGrid Columns="1">
-                                                <ListView Margin="5" Name="listeRoles" ItemsSource="{Binding Path=Roles}">
+                                                <ListView Margin="0" Width="auto" Name="listeRoles" ItemsSource="{Binding Path=Roles}">
                                                     <ListView.View>
-                                                        <GridView >
+                                                        <GridView>
                                                             <GridView.Columns>
-                                                                <GridViewColumn Header="Acteur" Width="Auto">
+                                                                <GridViewColumn Header="Acteur" Width="120">
                                                                     <GridViewColumn.CellTemplate>
                                                                         <DataTemplate>
                                                                             <StackPanel Orientation="Horizontal">
-                                                                                <TextBlock Text="{Binding Path=Acteur.Prenom}"/>
+                                                                                <TextBlock Text="{Binding Path=Acteur.Prenom}" TextAlignment="Left"/>
                                                                                 <TextBlock Text=" "/>
                                                                                 <TextBlock Text="{Binding Path=Acteur.Nom}"/>
                                                                             </StackPanel>
                                                                         </DataTemplate>
                                                                     </GridViewColumn.CellTemplate>
                                                                 </GridViewColumn>
-                                                                <GridViewColumn Header="Personnage" DisplayMemberBinding="{Binding Path=Personnage}"/>
+                                                                <GridViewColumn Header="Personnage" Width="100" DisplayMemberBinding="{Binding Path=Personnage}"/>
                                                             </GridView.Columns>
                                                         </GridView>
                                                     </ListView.View>
