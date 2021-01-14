@@ -8,6 +8,7 @@
                 <TextBlock Text="{Binding Path=Nom}"/>
                 <TextBlock Text=" "/>
                 <TextBlock Text="{Binding Path=Cout}"/>
+                <TextBlock Text="€"/>
             </StackPanel>
         </DataTemplate>
     </Window.Resources>
@@ -23,7 +24,7 @@
         <Label Margin="10" Grid.Row="0" Grid.Column="0">Liste offres dispo</Label>
         <Label Margin="10" Grid.Row="1" Grid.Column="0">Souscrire</Label>
 
-        <ComboBox Margin="10" Name="selecteurOffre" Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Source={StaticResource ModeleOffre}}"/>
+        <ComboBox Margin="10" Name="selecteurOffre" Grid.Row="0" Grid.Column="1" ItemTemplate="{Binding Source={StaticResource ModeleOffre}}"/>
 
         <StackPanel Margin="20" Grid.Row="1"  Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Center">
             <Button IsDefault="True" Width="70" Click="Ok">Oui</Button>

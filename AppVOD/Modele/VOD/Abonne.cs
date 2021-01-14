@@ -19,7 +19,10 @@ namespace AppVOD.Modele.VOD
         {
             souscriptions = new ObservableCollection<Souscription>();
         }
-  
+
+        /// <summary>
+        /// Souscriptions de l'abonné
+        /// </summary>
         public ICollection<Souscription> Souscriptions
         {
             get { return souscriptions; }

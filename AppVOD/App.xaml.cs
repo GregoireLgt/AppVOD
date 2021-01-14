@@ -16,6 +16,9 @@ namespace AppVOD
     /// </summary>
     public partial class App : Application
     {
+        /// <summary>
+        /// Point d'entrée (sorte de main)
+        /// </summary>
         public App()
         {
             // TestPolymorphisme();
@@ -26,6 +29,9 @@ namespace AppVOD
             //f.Enregistrer(fileName + "-save.xml");
         }
 
+        /// <summary>
+        /// Tests réalisés par M. Beaudoux
+        /// </summary>
         public void TestPolymorphisme()
         {
             Personne a1 = new Acteur();

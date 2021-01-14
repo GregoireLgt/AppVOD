@@ -127,10 +127,37 @@
                             <Button MinWidth="25" Command="vod:CommandesVOD.SupprimerSouscription">Supprimer souscription</Button>
                         </WrapPanel>
 
-                        <Label Margin="5" Grid.Row="3" Grid.Column="0">Souscriptions de l'abonné</Label>
+                        <Label Margin="5" Grid.Row="3" Grid.Column="0">
+                            <TextBlock>
+                            Souscriptions de l'abonné<LineBreak/>(survoler pour voir les films de l'offre)
+                            </TextBlock>
+                        </Label>
 
 
                         <ListView Margin="5,5,5,58" Name="listeSouscriptions" Grid.Row="3" Grid.Column="1" Grid.RowSpan="5" ItemsSource="{Binding Path=Souscriptions}">
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="{x:Type ListViewItem}">
+                                    <Setter Property="ToolTip">
+                                        <Setter.Value>
+                                            <UniformGrid Columns="1">
+                                                <ListView Margin="0" Width="auto" Name="listeFilms" ItemsSource="{Binding Path=Offre.Films}">
+                                                    <ListView.View>
+                                                        <GridView>
+                                                            <GridView.Columns>
+                                                                <GridViewColumn Width="Auto" Header="Titre" DisplayMemberBinding="{Binding Path=Titre}"/>
+                                                                <GridViewColumn Width="Auto" Header="Annee" DisplayMemberBinding="{Binding Path=Annee}"/>
+                                                                <GridViewColumn Width="Auto" Header="Genre" DisplayMemberBinding="{Binding Path=Genre}"/>
+                                                                <GridViewColumn Width="Auto" Header="Pays" DisplayMemberBinding="{Binding Path=Pays}"/>
+                                                                <GridViewColumn Width="Auto" Header="Metteur en scène" DisplayMemberBinding="{Binding Path=MetteurEnScene}"/>
+                                                            </GridView.Columns>
+                                                        </GridView>
+                                                    </ListView.View>
+                                                </ListView>
+                                            </UniformGrid>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListView.ItemContainerStyle>
                             <ListView.View>
                                 <GridView>
                                     <GridView.Columns>
@@ -210,7 +237,7 @@
                                                     <ListView.View>
                                                         <GridView>
                                                             <GridView.Columns>
-                                                                <GridViewColumn Header="Acteur" Width="120">
+                                                                <GridViewColumn Header="Acteur" Width="140">
                                                                     <GridViewColumn.CellTemplate>
                                                                         <DataTemplate>
                                                                             <StackPanel Orientation="Horizontal">

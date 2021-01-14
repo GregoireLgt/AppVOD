@@ -12,6 +12,16 @@
             App
             </summary>
         </member>
+        <member name="M:AppVOD.App.#ctor">
+            <summary>
+            Point d'entrée (sorte de main)
+            </summary>
+        </member>
+        <member name="M:AppVOD.App.TestPolymorphisme">
+            <summary>
+            Tests réalisés par M. Beaudoux
+            </summary>
+        </member>
         <member name="M:AppVOD.App.modeVOD">
             <summary>
             Charger la VOD
@@ -38,6 +48,31 @@
         <member name="M:AppVOD.FenetreApp.InitializeComponent">
             <summary>
             InitializeComponent
+            </summary>
+        </member>
+        <member name="T:AppVOD.IHM.Filmo.CommandesFilmo">
+            <summary>
+            Commandes de la filmographie
+            </summary>
+        </member>
+        <member name="P:AppVOD.IHM.Filmo.CommandesFilmo.Quitter">
+            <summary>
+            Commande quitter
+            </summary>
+        </member>
+        <member name="P:AppVOD.IHM.Filmo.CommandesFilmo.AjouterElement">
+            <summary>
+            Commande AjouterElement
+            </summary>
+        </member>
+        <member name="P:AppVOD.IHM.Filmo.CommandesFilmo.AjouterRole">
+            <summary>
+            Commande AjouterRole
+            </summary>
+        </member>
+        <member name="P:AppVOD.IHM.Filmo.CommandesFilmo.SupprimerRole">
+            <summary>
+            Commande SupprimerRole
             </summary>
         </member>
         <member name="T:AppVOD.IHM.Filmo.Enumeration.VueFilm">
@@ -167,6 +202,11 @@
             Définit les acteurs de la filmographie
             </summary>
         </member>
+        <member name="T:AppVOD.Modele.Filmo.Artiste">
+            <summary>
+            Classe Artiste (hérite de la classe Personne)
+            </summary>
+        </member>
         <member name="T:AppVOD.Modele.VOD.Abonne">
             <summary>
             Un abonne hérite de la classe Personne
@@ -175,6 +215,11 @@
         <member name="M:AppVOD.Modele.VOD.Abonne.#ctor">
             <summary>
             Constructeur de la classe Abonne
+            </summary>
+        </member>
+        <member name="P:AppVOD.Modele.VOD.Abonne.Souscriptions">
+            <summary>
+            Souscriptions de l'abonné
             </summary>
         </member>
         <member name="T:AppVOD.Modele.VOD.Offre">

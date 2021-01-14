@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 
 namespace AppVOD.IHM.Filmo
 {
+    /// <summary>
+    /// Commandes de la filmographie
+    /// </summary>
     public class CommandesFilmo
     {
         private static RoutedUICommand quitter;
@@ -21,21 +20,33 @@ namespace AppVOD.IHM.Filmo
             supprimerRole = new RoutedUICommand("Supprimer rôle", "SupprimerRole", typeof(CommandesFilmo));
         }
 
+        /// <summary>
+        /// Commande quitter
+        /// </summary>
         public static RoutedUICommand Quitter
         {
             get { return quitter; }
         }
 
+        /// <summary>
+        /// Commande AjouterElement
+        /// </summary>
         public static RoutedUICommand AjouterElement
         {
             get { return ajouterElement; }
         }
 
+        /// <summary>
+        /// Commande AjouterRole
+        /// </summary>
         public static RoutedUICommand AjouterRole
         {
             get { return ajouterRole; }
         }
 
+        /// <summary>
+        /// Commande SupprimerRole
+        /// </summary>
         public static RoutedUICommand SupprimerRole
         {
             get { return supprimerRole; }
