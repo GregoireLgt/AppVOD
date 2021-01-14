@@ -1,106 +1,179 @@
-<VOD xmlns="clr-namespace:AppVOD.Modele.VOD;assembly=AppVOD" xmlns:amf="clr-namespace:AppVOD.Modele.Filmo;assembly=AppVOD" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-  <VOD.Abonnes>
-    <Abonne Nom="Laget" Prenom="Gregoire">
-      <Abonne.Souscriptions>
-        <Souscription Date="2020-06-12">
-          <Souscription.Offre>
-            <Offre x:Name="__ReferenceID2" Cout="30" Nom="Premium">
-              <Offre.Films>
-                <amf:Film x:Name="__ReferenceID4" Annee="1959" Genre="Policier" Pays="US" Titre="Anatomy of a Murder">
-                  <amf:Film.MetteurEnScene>
-                    <amf:MetteurEnScene x:Name="__ReferenceID8" Nom="Preminger" Prenom="Otto" />
-                  </amf:Film.MetteurEnScene>
-                  <amf:Film.Roles>
-                    <amf:Role Personnage="Paul Biegler">
-                      <amf:Role.Acteur>
-                        <amf:Acteur x:Name="__ReferenceID0" Nom="Stewart" Prenom="James" />
-                      </amf:Role.Acteur>
-                    </amf:Role>
-                    <amf:Role Personnage="Laura Manion">
-                      <amf:Role.Acteur>
-                        <amf:Acteur x:Name="__ReferenceID6" Nom="Remick" Prenom="Lee" />
-                      </amf:Role.Acteur>
-                    </amf:Role>
-                  </amf:Film.Roles>
-                </amf:Film>
-                <amf:Film x:Name="__ReferenceID1" Annee="1958" Genre="Policier" Pays="US" Titre="Vertigo">
-                  <amf:Film.MetteurEnScene>
-                    <amf:MetteurEnScene x:Name="__ReferenceID7" Nom="Hitchcock" Prenom="Alfred" />
-                  </amf:Film.MetteurEnScene>
-                  <amf:Film.Roles>
-                    <amf:Role Acteur="{x:Reference __ReferenceID0}" Personnage="John Ferguson" />
-                    <amf:Role Personnage="Madeleine Elster">
-                      <amf:Role.Acteur>
-                        <amf:Acteur x:Name="__ReferenceID5" Nom="Novack" Prenom="Kim" />
-                      </amf:Role.Acteur>
-                    </amf:Role>
-                  </amf:Film.Roles>
-                </amf:Film>
-              </Offre.Films>
-            </Offre>
-          </Souscription.Offre>
-        </Souscription>
-        <Souscription Date="2020-02-12">
-          <Souscription.Offre>
-            <Offre x:Name="__ReferenceID3" Cout="10" Nom="Normal">
-              <Offre.Films>
-                <x:Reference>__ReferenceID1</x:Reference>
-              </Offre.Films>
-            </Offre>
-          </Souscription.Offre>
-        </Souscription>
-      </Abonne.Souscriptions>
-    </Abonne>
-    <Abonne Nom="Rabineau" Prenom="Laurene">
-      <Abonne.Souscriptions>
-        <Souscription Offre="{x:Reference __ReferenceID2}" Date="2020-06-12" />
-        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-02-12" />
-      </Abonne.Souscriptions>
-    </Abonne>
-    <Abonne Nom="Rabineau" Prenom="Tony">
-      <Abonne.Souscriptions>
-        <Souscription Offre="{x:Reference __ReferenceID2}" Date="2020-06-12" />
-        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-02-12" />
-      </Abonne.Souscriptions>
-    </Abonne>
-    <Abonne Nom="Rabineau" Prenom="Lisa">
-      <Abonne.Souscriptions>
-        <Souscription Offre="{x:Reference __ReferenceID2}" Date="2020-06-12" />
-        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-02-12" />
-      </Abonne.Souscriptions>
-    </Abonne>
-    <Abonne Nom="Laget" Prenom="Clement">
-      <Abonne.Souscriptions>
-        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-02-11" />
-      </Abonne.Souscriptions>
-    </Abonne>
-    <Abonne Nom="Laget" Prenom="Camille">
-      <Abonne.Souscriptions>
-        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-07-11" />
-      </Abonne.Souscriptions>
-    </Abonne>
-  </VOD.Abonnes>
-  <VOD.Filmographie>
-    <amf:Filmographie>
-      <amf:Filmographie.Artistes>
-        <x:Reference>__ReferenceID0</x:Reference>
-        <amf:Acteur Nom="Pitt" Prenom="Brad" />
-        <amf:Acteur Nom="Jolie" Prenom="Angelina" />
-        <amf:Acteur Nom="Cruise" Prenom="Tom" />
-        <amf:Acteur Nom="Hanks" Prenom="Tom" />
-        <x:Reference>__ReferenceID5</x:Reference>
-        <x:Reference>__ReferenceID6</x:Reference>
-        <x:Reference>__ReferenceID7</x:Reference>
-        <x:Reference>__ReferenceID8</x:Reference>
-      </amf:Filmographie.Artistes>
-      <amf:Filmographie.Films>
-        <x:Reference>__ReferenceID4</x:Reference>
-        <x:Reference>__ReferenceID1</x:Reference>
-      </amf:Filmographie.Films>
-    </amf:Filmographie>
-  </VOD.Filmographie>
-  <VOD.Offres>
-    <x:Reference>__ReferenceID3</x:Reference>
-    <x:Reference>__ReferenceID2</x:Reference>
-  </VOD.Offres>
-</VOD>
+<!-- VOD created by Gregoire Laget -->
+<vod:VOD
+	xmlns:vod="clr-namespace:AppVOD.Modele.VOD;assembly=AppVOD"
+	 xmlns:filmo="clr-namespace:AppVOD.Modele.Filmo;assembly=AppVOD"
+	 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+>
+	<vod:VOD.Filmographie>
+		<filmo:Filmographie>
+			<filmo:Filmographie.Artistes>
+				<filmo:Acteur x:Name="jstewart" Nom="Stewart" Prenom="James" />
+				<filmo:Acteur x:Name="bpitt" Nom="Pitt" Prenom="Brad" />
+				<filmo:Acteur x:Name="ajolie" Nom="Jolie" Prenom="Angelina" />
+				<filmo:Acteur x:Name="ldicaprio" Nom="Dicaprio" Prenom="Leonardo" />
+				<filmo:Acteur x:Name="mmcconaughey" Nom="Mcconaughey" Prenom="Matthew" />
+				<filmo:Acteur x:Name="tcruise" Nom="Cruise" Prenom="Tom" />
+				<filmo:Acteur x:Name="thanks" Nom="Hanks" Prenom="Tom" />
+				<filmo:Acteur x:Name="dwashington" Nom="Washington" Prenom="Denzel" />
+				<filmo:Acteur x:Name="wsmith" Nom="Smith" Prenom="Will" />
+				<filmo:Acteur x:Name="knovack" Nom="Novack" Prenom="Kim" />
+				<filmo:Acteur x:Name="lremick">
+					<filmo:Acteur.Nom>Remick</filmo:Acteur.Nom>
+					<filmo:Acteur.Prenom>Lee</filmo:Acteur.Prenom>
+				</filmo:Acteur>
+				<filmo:MetteurEnScene x:Name="ahitchcock" Nom="Hitchcock" Prenom="Alfred" />
+				<filmo:MetteurEnScene x:Name="opreminger" Nom="Preminger" Prenom="Otto" />
+				<filmo:MetteurEnScene x:Name="dliman" Nom="Liman" Prenom="Doug" />
+				<filmo:MetteurEnScene x:Name="sspielberg" Nom="Spielberg" Prenom="Steven" />
+				<filmo:MetteurEnScene x:Name="sraimi" Nom="Raimi" Prenom="Sam" />
+				<filmo:MetteurEnScene x:Name="skubrick" Nom="Kubrick" Prenom="Stanley" />
+				<filmo:MetteurEnScene x:Name="dlynch" Nom="Lynch" Prenom="David" />
+				<filmo:MetteurEnScene x:Name="dfincher" Nom="Fincher" Prenom="David" />
+				<filmo:MetteurEnScene x:Name="cnolan" Nom="Nolan" Prenom="Christopher" />
+
+			</filmo:Filmographie.Artistes>
+			<filmo:Filmographie.Films>
+				<filmo:Film x:Name="Murder" Annee="1959" Genre="Policier" Pays="US" Titre="Anatomy of a Murder">
+					<filmo:Film.MetteurEnScene>
+						<x:Reference>opreminger</x:Reference>
+					</filmo:Film.MetteurEnScene>
+					<filmo:Film.Roles>
+						<filmo:Role Personnage="Paul Biegler">
+							<filmo:Role.Acteur>
+								<x:Reference>jstewart</x:Reference>
+							</filmo:Role.Acteur>
+						</filmo:Role>
+						<filmo:Role Personnage="Laura Manion">
+							<filmo:Role.Acteur>
+								<x:Reference>lremick</x:Reference>
+							</filmo:Role.Acteur>
+						</filmo:Role>
+					</filmo:Film.Roles>
+				</filmo:Film>
+				<filmo:Film x:Name="Vertigo" Annee="1958" Genre="Policier" Pays="US" Titre="Vertigo">
+					<filmo:Film.MetteurEnScene>
+						<x:Reference>ahitchcock</x:Reference>
+					</filmo:Film.MetteurEnScene>
+					<filmo:Film.Roles>
+						<filmo:Role Personnage="John Ferguson">
+							<filmo:Role.Acteur>
+								<x:Reference>jstewart</x:Reference>
+							</filmo:Role.Acteur>
+						</filmo:Role>
+						<filmo:Role Personnage="Madeleine Elster">
+							<filmo:Role.Acteur>
+								<x:Reference>knovack</x:Reference>
+							</filmo:Role.Acteur>
+						</filmo:Role>
+					</filmo:Film.Roles>
+				</filmo:Film>
+
+				<filmo:Film x:Name="Inception" Annee="2010" Genre="ScienceFiction" Pays="US" Titre="Inception">
+					<filmo:Film.MetteurEnScene>
+						<x:Reference>cnolan</x:Reference>
+					</filmo:Film.MetteurEnScene>
+					<filmo:Film.Roles>
+						<filmo:Role Personnage="Dom Cobb">
+							<filmo:Role.Acteur>
+								<x:Reference>ldicaprio</x:Reference>
+							</filmo:Role.Acteur>
+						</filmo:Role>
+					</filmo:Film.Roles>
+				</filmo:Film>
+
+				<filmo:Film x:Name="Interstellar" Annee="2014" Genre="ScienceFiction" Pays="US" Titre="Interstellar">
+					<filmo:Film.MetteurEnScene>
+						<x:Reference>cnolan</x:Reference>
+					</filmo:Film.MetteurEnScene>
+					<filmo:Film.Roles>
+						<filmo:Role Personnage="Joseph Cooper">
+							<filmo:Role.Acteur>
+								<x:Reference>mmcconaughey</x:Reference>
+							</filmo:Role.Acteur>
+						</filmo:Role>
+					</filmo:Film.Roles>
+				</filmo:Film>
+
+				<filmo:Film x:Name="Mrandmrssmith" Annee="2005" Genre="Action" Pays="US" Titre="Mr and Mrs Smith">
+					<filmo:Film.MetteurEnScene>
+						<x:Reference>dliman</x:Reference>
+					</filmo:Film.MetteurEnScene>
+					<filmo:Film.Roles>
+						<filmo:Role Personnage="John Smith">
+							<filmo:Role.Acteur>
+								<x:Reference>bpitt</x:Reference>
+							</filmo:Role.Acteur>
+						</filmo:Role>
+						<filmo:Role Personnage="Jane Smith">
+							<filmo:Role.Acteur>
+								<x:Reference>ajolie</x:Reference>
+							</filmo:Role.Acteur>
+						</filmo:Role>
+					</filmo:Film.Roles>
+				</filmo:Film>
+				
+			</filmo:Filmographie.Films>
+		</filmo:Filmographie>
+	</vod:VOD.Filmographie>
+
+
+	<vod:VOD.Abonnes>
+		<vod:Abonne x:Name="lagetgre" Nom="Laget" Prenom="Gregoire">
+			<vod:Abonne.Souscriptions>
+				<vod:Souscription Date="06.12.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Premium</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+
+				<vod:Souscription Date="02.12.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Standard</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+			</vod:Abonne.Souscriptions>
+		</vod:Abonne>
+
+		<vod:Abonne x:Name="lagetcle" Nom="Laget" Prenom="Clement">
+			<vod:Abonne.Souscriptions>
+				<vod:Souscription Date="02.11.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Standard</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+			</vod:Abonne.Souscriptions>
+		</vod:Abonne>
+
+		<vod:Abonne x:Name="lagetca" Nom="Laget" Prenom="Camille">
+			<vod:Abonne.Souscriptions>
+				<vod:Souscription Date="07.11.2020">
+					<vod:Souscription.Offre>
+						<x:Reference>Standard</x:Reference>
+					</vod:Souscription.Offre>
+				</vod:Souscription>
+			</vod:Abonne.Souscriptions>
+		</vod:Abonne>
+
+
+	</vod:VOD.Abonnes>
+	<vod:VOD.Offres>
+
+		<vod:Offre x:Name="Standard" Nom="Normal" Cout="5">
+			<vod:Offre.Films>
+				<x:Reference>Vertigo</x:Reference>
+				<x:Reference>Murder</x:Reference>
+			</vod:Offre.Films>
+		</vod:Offre>
+
+		<vod:Offre x:Name="Premium" Nom="Premium" Cout="10">
+			<vod:Offre.Films>
+				<x:Reference>Murder</x:Reference>
+				<x:Reference>Vertigo</x:Reference>
+				<x:Reference>Mrandmrssmith</x:Reference>
+				<x:Reference>Inception</x:Reference>
+				<x:Reference>Interstellar</x:Reference>
+
+			</vod:Offre.Films>
+		</vod:Offre>
+	</vod:VOD.Offres>
+</vod:VOD>

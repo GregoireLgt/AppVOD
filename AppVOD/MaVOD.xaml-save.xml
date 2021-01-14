@@ -4,11 +4,11 @@
       <Abonne.Souscriptions>
         <Souscription Date="2020-06-12">
           <Souscription.Offre>
-            <Offre x:Name="__ReferenceID2" Cout="30" Nom="Premium">
+            <Offre x:Name="__ReferenceID5" Cout="10" Nom="Premium">
               <Offre.Films>
-                <amf:Film x:Name="__ReferenceID4" Annee="1959" Genre="Policier" Pays="US" Titre="Anatomy of a Murder">
+                <amf:Film x:Name="__ReferenceID3" Annee="1959" Genre="Policier" Pays="US" Titre="Anatomy of a Murder">
                   <amf:Film.MetteurEnScene>
-                    <amf:MetteurEnScene x:Name="__ReferenceID8" Nom="Preminger" Prenom="Otto" />
+                    <amf:MetteurEnScene x:Name="__ReferenceID16" Nom="Preminger" Prenom="Otto" />
                   </amf:Film.MetteurEnScene>
                   <amf:Film.Roles>
                     <amf:Role Personnage="Paul Biegler">
@@ -18,20 +18,58 @@
                     </amf:Role>
                     <amf:Role Personnage="Laura Manion">
                       <amf:Role.Acteur>
-                        <amf:Acteur x:Name="__ReferenceID6" Nom="Remick" Prenom="Lee" />
+                        <amf:Acteur x:Name="__ReferenceID14" Nom="Remick" Prenom="Lee" />
                       </amf:Role.Acteur>
                     </amf:Role>
                   </amf:Film.Roles>
                 </amf:Film>
-                <amf:Film x:Name="__ReferenceID1" Annee="1958" Genre="Policier" Pays="US" Titre="Vertigo">
+                <amf:Film x:Name="__ReferenceID2" Annee="1958" Genre="Policier" Pays="US" Titre="Vertigo">
                   <amf:Film.MetteurEnScene>
-                    <amf:MetteurEnScene x:Name="__ReferenceID7" Nom="Hitchcock" Prenom="Alfred" />
+                    <amf:MetteurEnScene x:Name="__ReferenceID15" Nom="Hitchcock" Prenom="Alfred" />
                   </amf:Film.MetteurEnScene>
                   <amf:Film.Roles>
                     <amf:Role Acteur="{x:Reference __ReferenceID0}" Personnage="John Ferguson" />
                     <amf:Role Personnage="Madeleine Elster">
                       <amf:Role.Acteur>
-                        <amf:Acteur x:Name="__ReferenceID5" Nom="Novack" Prenom="Kim" />
+                        <amf:Acteur x:Name="__ReferenceID13" Nom="Novack" Prenom="Kim" />
+                      </amf:Role.Acteur>
+                    </amf:Role>
+                  </amf:Film.Roles>
+                </amf:Film>
+                <amf:Film x:Name="__ReferenceID8" Annee="2005" Genre="Action" Pays="US" Titre="Mr and Mrs Smith">
+                  <amf:Film.MetteurEnScene>
+                    <amf:MetteurEnScene x:Name="__ReferenceID17" Nom="Liman" Prenom="Doug" />
+                  </amf:Film.MetteurEnScene>
+                  <amf:Film.Roles>
+                    <amf:Role Personnage="John Smith">
+                      <amf:Role.Acteur>
+                        <amf:Acteur x:Name="__ReferenceID9" Nom="Pitt" Prenom="Brad" />
+                      </amf:Role.Acteur>
+                    </amf:Role>
+                    <amf:Role Personnage="Jane Smith">
+                      <amf:Role.Acteur>
+                        <amf:Acteur x:Name="__ReferenceID10" Nom="Jolie" Prenom="Angelina" />
+                      </amf:Role.Acteur>
+                    </amf:Role>
+                  </amf:Film.Roles>
+                </amf:Film>
+                <amf:Film x:Name="__ReferenceID6" Annee="2010" Genre="ScienceFiction" Pays="US" Titre="Inception">
+                  <amf:Film.MetteurEnScene>
+                    <amf:MetteurEnScene x:Name="__ReferenceID1" Nom="Nolan" Prenom="Christopher" />
+                  </amf:Film.MetteurEnScene>
+                  <amf:Film.Roles>
+                    <amf:Role Personnage="Dom Cobb">
+                      <amf:Role.Acteur>
+                        <amf:Acteur x:Name="__ReferenceID11" Nom="Dicaprio" Prenom="Leonardo" />
+                      </amf:Role.Acteur>
+                    </amf:Role>
+                  </amf:Film.Roles>
+                </amf:Film>
+                <amf:Film MetteurEnScene="{x:Reference __ReferenceID1}" x:Name="__ReferenceID7" Annee="2014" Genre="ScienceFiction" Pays="US" Titre="Interstellar">
+                  <amf:Film.Roles>
+                    <amf:Role Personnage="Joseph Cooper">
+                      <amf:Role.Acteur>
+                        <amf:Acteur x:Name="__ReferenceID12" Nom="Mcconaughey" Prenom="Matthew" />
                       </amf:Role.Acteur>
                     </amf:Role>
                   </amf:Film.Roles>
@@ -42,41 +80,24 @@
         </Souscription>
         <Souscription Date="2020-02-12">
           <Souscription.Offre>
-            <Offre x:Name="__ReferenceID3" Cout="10" Nom="Normal">
+            <Offre x:Name="__ReferenceID4" Cout="5" Nom="Normal">
               <Offre.Films>
-                <x:Reference>__ReferenceID1</x:Reference>
+                <x:Reference>__ReferenceID2</x:Reference>
+                <x:Reference>__ReferenceID3</x:Reference>
               </Offre.Films>
             </Offre>
           </Souscription.Offre>
         </Souscription>
       </Abonne.Souscriptions>
     </Abonne>
-    <Abonne Nom="Rabineau" Prenom="Laurene">
-      <Abonne.Souscriptions>
-        <Souscription Offre="{x:Reference __ReferenceID2}" Date="2020-06-12" />
-        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-02-12" />
-      </Abonne.Souscriptions>
-    </Abonne>
-    <Abonne Nom="Rabineau" Prenom="Tony">
-      <Abonne.Souscriptions>
-        <Souscription Offre="{x:Reference __ReferenceID2}" Date="2020-06-12" />
-        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-02-12" />
-      </Abonne.Souscriptions>
-    </Abonne>
-    <Abonne Nom="Rabineau" Prenom="Lisa">
-      <Abonne.Souscriptions>
-        <Souscription Offre="{x:Reference __ReferenceID2}" Date="2020-06-12" />
-        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-02-12" />
-      </Abonne.Souscriptions>
-    </Abonne>
     <Abonne Nom="Laget" Prenom="Clement">
       <Abonne.Souscriptions>
-        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-02-11" />
+        <Souscription Offre="{x:Reference __ReferenceID4}" Date="2020-02-11" />
       </Abonne.Souscriptions>
     </Abonne>
     <Abonne Nom="Laget" Prenom="Camille">
       <Abonne.Souscriptions>
-        <Souscription Offre="{x:Reference __ReferenceID3}" Date="2020-07-11" />
+        <Souscription Offre="{x:Reference __ReferenceID4}" Date="2020-07-11" />
       </Abonne.Souscriptions>
     </Abonne>
   </VOD.Abonnes>
@@ -84,23 +105,37 @@
     <amf:Filmographie>
       <amf:Filmographie.Artistes>
         <x:Reference>__ReferenceID0</x:Reference>
-        <amf:Acteur Nom="Pitt" Prenom="Brad" />
-        <amf:Acteur Nom="Jolie" Prenom="Angelina" />
+        <x:Reference>__ReferenceID9</x:Reference>
+        <x:Reference>__ReferenceID10</x:Reference>
+        <x:Reference>__ReferenceID11</x:Reference>
+        <x:Reference>__ReferenceID12</x:Reference>
         <amf:Acteur Nom="Cruise" Prenom="Tom" />
         <amf:Acteur Nom="Hanks" Prenom="Tom" />
-        <x:Reference>__ReferenceID5</x:Reference>
+        <amf:Acteur Nom="Washington" Prenom="Denzel" />
+        <amf:Acteur Nom="Smith" Prenom="Will" />
+        <x:Reference>__ReferenceID13</x:Reference>
+        <x:Reference>__ReferenceID14</x:Reference>
+        <x:Reference>__ReferenceID15</x:Reference>
+        <x:Reference>__ReferenceID16</x:Reference>
+        <x:Reference>__ReferenceID17</x:Reference>
+        <amf:MetteurEnScene Nom="Spielberg" Prenom="Steven" />
+        <amf:MetteurEnScene Nom="Raimi" Prenom="Sam" />
+        <amf:MetteurEnScene Nom="Kubrick" Prenom="Stanley" />
+        <amf:MetteurEnScene Nom="Lynch" Prenom="David" />
+        <amf:MetteurEnScene Nom="Fincher" Prenom="David" />
+        <x:Reference>__ReferenceID1</x:Reference>
+      </amf:Filmographie.Artistes>
+      <amf:Filmographie.Films>
+        <x:Reference>__ReferenceID3</x:Reference>
+        <x:Reference>__ReferenceID2</x:Reference>
         <x:Reference>__ReferenceID6</x:Reference>
         <x:Reference>__ReferenceID7</x:Reference>
         <x:Reference>__ReferenceID8</x:Reference>
-      </amf:Filmographie.Artistes>
-      <amf:Filmographie.Films>
-        <x:Reference>__ReferenceID4</x:Reference>
-        <x:Reference>__ReferenceID1</x:Reference>
       </amf:Filmographie.Films>
     </amf:Filmographie>
   </VOD.Filmographie>
   <VOD.Offres>
-    <x:Reference>__ReferenceID3</x:Reference>
-    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
   </VOD.Offres>
 </VOD>
