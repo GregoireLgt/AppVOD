@@ -31,6 +31,7 @@
         <CommandBinding Command="vod:CommandesVOD.SupprimerFilm" Executed="SupprimerFilm" CanExecute="SupprimerFilmPossible"/>
         <CommandBinding Command="vod:CommandesVOD.AjouterSouscription" Executed="AjouterSouscription" CanExecute="AjouterSouscriptionPossible"/>
         <CommandBinding Command="vod:CommandesVOD.SupprimerSouscription" Executed="SupprimerSouscription" CanExecute="SupprimerSouscriptionPossible"/>
+        <CommandBinding Command="filmo:CommandesFilmo.AjouterRole" Executed="AjouterRole" CanExecute="AjouterRolePossible"/>
     </Window.CommandBindings>
 
 
@@ -201,6 +202,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
@@ -221,13 +223,19 @@
                             <Button MinWidth="25" Command="vod:CommandesVOD.SupprimerFilm">Supprimer Film</Button>
                         </WrapPanel>
 
-                        <Label Margin="5" Grid.Row="3" Grid.Column="0">
+                        <WrapPanel Margin="5" Grid.Row="3" Grid.Column="1" >
+                            <Button MinWidth="25" Command="filmo:CommandesFilmo.AjouterRole">Ajouter Role</Button>
+                            <Border Margin="10,0,0,0"/>
+                        </WrapPanel>
+
+                        <Label Margin="5" Grid.Row="4" Grid.Column="0">
                             <TextBlock>
                             Liste des films de l'offre<LineBreak/>(survoler pour voir les acteurs)
                             </TextBlock>
                         </Label>
-                        
-                        <ListView Margin="5,5,5,58" Name="listeFilms" Grid.Row="3" Grid.Column="1" Grid.RowSpan="5" ItemsSource="{Binding Path=Films}" >
+
+
+                        <ListView Margin="5,5,5,58" Name="listeFilms" Grid.Row="4" Grid.Column="1" Grid.RowSpan="5" ItemsSource="{Binding Path=Films}" >
                             <ListView.ItemContainerStyle>
                                 <Style TargetType="{x:Type ListViewItem}">
                                     <Setter Property="ToolTip">

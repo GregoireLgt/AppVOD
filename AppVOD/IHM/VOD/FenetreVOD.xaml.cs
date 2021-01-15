@@ -220,6 +220,25 @@ namespace AppVOD.IHM.VOD
         {
             e.CanExecute = (vod != null) && (listeFilms.SelectedItem != null);
         }
+
+        private void AjouterRole(object sender, RoutedEventArgs e)
+        {
+            FenetreRole fenetreRole = new FenetreRole();
+            fenetreRole.selecteurActeur.ItemsSource = VOD.Filmographie.Acteurs;
+            bool? ok = fenetreRole.ShowDialog();
+            if (ok == true)
+            {
+                Role role = new Role();
+                role.Acteur = (Acteur)fenetreRole.selecteurActeur.SelectedItem;
+                role.Personnage = fenetreRole.personnage.Text;
+                Film film = (Film)listeFilms.SelectedItem;
+                film.Roles.Add(role);
+            }
+        }
+
+        private void AjouterRolePossible(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = (listeOffres.SelectedItem!= null && listeFilms.SelectedItem != null);
+        }
     }
-       
 }

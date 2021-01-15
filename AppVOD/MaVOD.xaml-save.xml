@@ -170,7 +170,7 @@
         <Souscription Offre="{x:Reference __ReferenceID7}" Date="2018-02-03" />
       </Abonne.Souscriptions>
     </Abonne>
-    <Abonne Nom="Rabineau" Prenom="Laur�ne">
+    <Abonne Nom="Rabineau" Prenom="Laurene">
       <Abonne.Souscriptions>
         <Souscription Offre="{x:Reference __ReferenceID6}" Date="2019-04-04" />
       </Abonne.Souscriptions>
